@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <Version>0.0.1</Version>
+        <FileVersion>0.0.1</FileVersion>
+        <AssemblyVersion>0.0.1</AssemblyVersion>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <Platforms>AnyCPU;x64</Platforms>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageDescription>Leotia Design System for Avalonia UI. Based on shad-ui</PackageDescription>
+        <PackageTags>avalonia;avaloniaui;ui;theme;leotia</PackageTags>
+        <PackageProjectUrl>https://github.com/accntech/shad-ui.git</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/accntech/shad-ui.git</RepositoryUrl>
+        <PackageIcon>icon.png</PackageIcon>
+        <Authors>IDGG73</Authors>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.3.1" />
+        <PackageReference Include="Avalonia.Controls.ColorPicker" Version="11.3.1" />
+        <PackageReference Include="Avalonia.Skia" Version="11.3.1" />
+        <PackageReference Include="MinVer" Version="6.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Avalonia.Themes.Simple" Version="11.3.1" />
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.1" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <MinVerDefaultPreReleaseIdentifiers>preview</MinVerDefaultPreReleaseIdentifiers>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+</Project>
