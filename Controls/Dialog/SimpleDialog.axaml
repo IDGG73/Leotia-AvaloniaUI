@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI"
+    xmlns:leotiaui="clr-namespace:LeotiaUI"
     x:ClassModifier="internal">
     <Design.PreviewWith>
         <Border Padding="24">
@@ -11,7 +11,7 @@
                     BorderBrush="{DynamicResource BorderColor}"
                     BorderThickness="1"
                     CornerRadius="{DynamicResource LgCornerRadius}">
-                    <shadui:SimpleDialog
+                    <leotiaui:SimpleDialog
                         Title="Are you absolutely sure?"
                         CancelButtonStyle="Outline"
                         CancelButtonText="Cancel"
@@ -23,7 +23,7 @@
                     BorderBrush="{DynamicResource BorderColor}"
                     BorderThickness="1"
                     CornerRadius="{DynamicResource LgCornerRadius}">
-                    <shadui:SimpleDialog
+                    <leotiaui:SimpleDialog
                         Title="Are you absolutely sure?"
                         CancelButtonStyle="Outline"
                         CancelButtonText="Cancel"
@@ -36,7 +36,7 @@
                     BorderBrush="{DynamicResource BorderColor}"
                     BorderThickness="1"
                     CornerRadius="{DynamicResource LgCornerRadius}">
-                    <shadui:SimpleDialog
+                    <leotiaui:SimpleDialog
                         Title="Are you absolutely sure?"
                         CancelButtonStyle="Ghost"
                         CancelButtonText="Cancel"
@@ -50,7 +50,7 @@
             </StackPanel>
         </Border>
     </Design.PreviewWith>
-    <ControlTheme x:Key="SimpleDialogTheme" TargetType="shadui:SimpleDialog">
+    <ControlTheme x:Key="SimpleDialogTheme" TargetType="leotiaui:SimpleDialog">
         <Setter Property="Padding" Value="24" />
         <Setter Property="Template">
             <Setter.Value>
@@ -76,8 +76,8 @@
                             <Button
                                 Name="PART_CancelButton"
                                 MinWidth="80"
-                                shadui:ElementAssist.Classes="{TemplateBinding CancelButtonStyle,
-                                                                               Converter={x:Static shadui:DialogButtonStyleConverters.ToClass}}"
+                                leotiaui:ElementAssist.Classes="{TemplateBinding CancelButtonStyle,
+                                                                               Converter={x:Static leotiaui:DialogButtonStyleConverters.ToClass}}"
                                 Content="{TemplateBinding CancelButtonText}"
                                 IsVisible="{CompiledBinding Content,
                                                             ElementName=PART_CancelButton,
@@ -85,8 +85,8 @@
                             <Button
                                 Name="PART_TertiaryButton"
                                 MinWidth="80"
-                                shadui:ElementAssist.Classes="{TemplateBinding TertiaryButtonStyle,
-                                                                               Converter={x:Static shadui:DialogButtonStyleConverters.ToClass}}"
+                                leotiaui:ElementAssist.Classes="{TemplateBinding TertiaryButtonStyle,
+                                                                               Converter={x:Static leotiaui:DialogButtonStyleConverters.ToClass}}"
                                 Content="{TemplateBinding TertiaryButtonText}"
                                 IsVisible="{CompiledBinding Content,
                                                             ElementName=PART_TertiaryButton,
@@ -94,8 +94,8 @@
                             <Button
                                 Name="PART_SecondaryButton"
                                 MinWidth="80"
-                                shadui:ElementAssist.Classes="{TemplateBinding SecondaryButtonStyle,
-                                                                               Converter={x:Static shadui:DialogButtonStyleConverters.ToClass}}"
+                                leotiaui:ElementAssist.Classes="{TemplateBinding SecondaryButtonStyle,
+                                                                               Converter={x:Static leotiaui:DialogButtonStyleConverters.ToClass}}"
                                 Content="{TemplateBinding SecondaryButtonText}"
                                 IsVisible="{CompiledBinding Content,
                                                             ElementName=PART_SecondaryButton,
@@ -103,9 +103,9 @@
                             <Button
                                 Name="PART_PrimaryButton"
                                 MinWidth="80"
-                                shadui:ElementAssist.Classes="{TemplateBinding PrimaryButtonStyle,
-                                                                               Converter={x:Static shadui:DialogButtonStyleConverters.ToClass}}"
-                                shadui:ElementAssist.FocusOnLoad="True"
+                                leotiaui:ElementAssist.Classes="{TemplateBinding PrimaryButtonStyle,
+                                                                               Converter={x:Static leotiaui:DialogButtonStyleConverters.ToClass}}"
+                                leotiaui:ElementAssist.FocusOnLoad="True"
                                 Content="{TemplateBinding PrimaryButtonText}"
                                 IsVisible="{CompiledBinding Content,
                                                             ElementName=PART_PrimaryButton,
@@ -118,7 +118,7 @@
     </ControlTheme>
 
     <ControlTheme
-        x:Key="{x:Type shadui:SimpleDialog}"
+        x:Key="{x:Type leotiaui:SimpleDialog}"
         BasedOn="{StaticResource SimpleDialogTheme}"
-        TargetType="shadui:SimpleDialog" />
+        TargetType="leotiaui:SimpleDialog" />
 </ResourceDictionary>

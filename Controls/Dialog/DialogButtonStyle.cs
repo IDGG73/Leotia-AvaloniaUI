@@ -1,5 +1,5 @@
 ﻿// ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Defines the style of the button in the simple dialog.

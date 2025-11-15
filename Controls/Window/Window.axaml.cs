@@ -11,7 +11,7 @@ using Avalonia.Interactivity;
 using Avalonia.Media;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     A modern window with a customizable title bar.

@@ -10,7 +10,7 @@ using Avalonia.Media;
 using Avalonia.VisualTree;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Provides extension methods for managing window state persistence in Avalonia applications.
@@ -37,7 +37,7 @@ public static class WindowExt
     {
         if (Handlers.ContainsKey(window)) return;
 
-        var file = Path.Combine(Path.GetTempPath(), $"shadui_{key}.txt");
+        var file = Path.Combine(Path.GetTempPath(), $"leotiaui_{key}.txt");
         RestoreWindowState(window, file);
 
         EventHandler<WindowClosingEventArgs> handler = async void (_, _) =>

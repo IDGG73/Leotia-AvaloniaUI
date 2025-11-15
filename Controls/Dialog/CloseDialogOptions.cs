@@ -1,5 +1,5 @@
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Options for closing a dialog.

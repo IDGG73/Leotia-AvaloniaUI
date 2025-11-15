@@ -1,7 +1,7 @@
 ﻿using Avalonia.Controls;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Represents a description control for a card.

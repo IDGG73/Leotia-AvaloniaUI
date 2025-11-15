@@ -1,7 +1,7 @@
 ﻿using Avalonia.Controls.Primitives;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Represents a loading spinner control.

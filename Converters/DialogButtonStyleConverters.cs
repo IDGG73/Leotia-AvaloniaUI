@@ -1,7 +1,7 @@
 ﻿using Avalonia.Data.Converters;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Provides value converters for converting DialogButtonStyle enum values to CSS class names.

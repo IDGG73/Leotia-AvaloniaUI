@@ -2,7 +2,7 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:collections="using:Avalonia.Collections"
-    xmlns:shadui="clr-namespace:ShadUI">
+    xmlns:leotiaui="clr-namespace:LeotiaUI">
     <ControlTheme x:Key="{x:Type DataGridCell}" TargetType="DataGridCell">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -68,7 +68,7 @@
                                 Margin="8,0,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
-                                Data="{x:Static shadui:Icons.ArrowDown}"
+                                Data="{x:Static leotiaui:Icons.ArrowDown}"
                                 Fill="{DynamicResource MutedColor}"
                                 IsVisible="False"
                                 Stretch="Uniform">
@@ -220,7 +220,7 @@
                             </Transitions>
                         </Viewbox.Transitions>
                         <Path
-                            Data="{x:Static shadui:Icons.ChevronDown}"
+                            Data="{x:Static leotiaui:Icons.ChevronDown}"
                             Fill="{DynamicResource MutedColor}"
                             Stretch="Uniform">
                             <Path.Transitions />

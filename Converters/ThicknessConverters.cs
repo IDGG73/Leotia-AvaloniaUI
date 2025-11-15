@@ -3,7 +3,7 @@ using Avalonia;
 using Avalonia.Data.Converters;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Provides value converters for manipulating Thickness values in XAML.

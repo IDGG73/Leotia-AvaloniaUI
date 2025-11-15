@@ -8,7 +8,7 @@ using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 [TemplatePart("PART_PrimaryButton", typeof(Button))]
 [TemplatePart("PART_SecondaryButton", typeof(Button))]

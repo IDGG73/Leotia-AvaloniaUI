@@ -6,7 +6,7 @@ using Avalonia.Styling;
 using Avalonia.Threading;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Watches and manages theme changes in the application, providing access to current theme colors

@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI"
+    xmlns:leotiaui="clr-namespace:LeotiaUI"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <Design.PreviewWith>
         <Border Height="500" Padding="20">
@@ -10,7 +10,7 @@
                 <TimePicker UseSeconds="True" />
                 <TimePicker ClockIdentifier="24HourClock" />
                 <TimePicker IsEnabled="False" />
-                <TimePicker shadui:ControlAssist.Hint="Start time schedule" shadui:ControlAssist.Label="Start time" />
+                <TimePicker leotiaui:ControlAssist.Hint="Start time schedule" leotiaui:ControlAssist.Label="Start time" />
                 <TimePicker MaxWidth="255">
                     <DataValidationErrors.Error>
                         <system:Exception />
@@ -67,7 +67,7 @@
         <Setter Property="Background" Value="{DynamicResource SelectionColor}" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="FontWeight" Value="Medium" />
-        <Setter Property="shadui:ControlAssist.MinHeight" Value="36" />
+        <Setter Property="leotiaui:ControlAssist.MinHeight" Value="36" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
         <Setter Property="Template">
             <ControlTemplate>
@@ -77,9 +77,9 @@
                             Name="Label"
                             Margin="0,0,0,6"
                             Classes="Small"
-                            IsVisible="{TemplateBinding shadui:ControlAssist.Label,
+                            IsVisible="{TemplateBinding leotiaui:ControlAssist.Label,
                                                         Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                            Text="{TemplateBinding shadui:ControlAssist.Label}" />
+                            Text="{TemplateBinding leotiaui:ControlAssist.Label}" />
                         <Panel Name="LayoutRoot" Background="Transparent">
                             <Border
                                 Name="PART_Background"
@@ -94,8 +94,8 @@
                             </Border>
                             <Border
                                 Name="Border"
-                                Height="{TemplateBinding shadui:ControlAssist.Height}"
-                                MinHeight="{TemplateBinding shadui:ControlAssist.MinHeight}"
+                                Height="{TemplateBinding leotiaui:ControlAssist.Height}"
+                                MinHeight="{TemplateBinding leotiaui:ControlAssist.MinHeight}"
                                 Padding="{TemplateBinding Padding}"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
@@ -120,7 +120,7 @@
                                             Height="16"
                                             Margin="12,0"
                                             HorizontalAlignment="Right"
-                                            Data="{x:Static shadui:Icons.DateTime}"
+                                            Data="{x:Static leotiaui:Icons.DateTime}"
                                             DockPanel.Dock="Right"
                                             Foreground="{DynamicResource MutedColor}" />
                                         <Grid Name="PART_FlyoutButtonContentGrid" ColumnDefinitions="Auto Auto Auto Auto Auto Auto Auto">
@@ -142,7 +142,7 @@
                                                 Name="PART_FirstColumnDivider"
                                                 Grid.Column="1"
                                                 Width="{TemplateBinding BorderThickness,
-                                                                        Converter={x:Static shadui:ThicknessConverters.ToLargest}}"
+                                                                        Converter={x:Static leotiaui:ThicknessConverters.ToLargest}}"
                                                 HorizontalAlignment="Center"
                                                 Fill="{TemplateBinding BorderBrush}" />
                                             <Border
@@ -163,7 +163,7 @@
                                                 Name="PART_SecondColumnDivider"
                                                 Grid.Column="3"
                                                 Width="{TemplateBinding BorderThickness,
-                                                                        Converter={x:Static shadui:ThicknessConverters.ToLargest}}"
+                                                                        Converter={x:Static leotiaui:ThicknessConverters.ToLargest}}"
                                                 HorizontalAlignment="Center"
                                                 Fill="{TemplateBinding BorderBrush}" />
                                             <Border
@@ -184,7 +184,7 @@
                                                 Name="PART_ThirdColumnDivider"
                                                 Grid.Column="5"
                                                 Width="{TemplateBinding BorderThickness,
-                                                                        Converter={x:Static shadui:ThicknessConverters.ToLargest}}"
+                                                                        Converter={x:Static leotiaui:ThicknessConverters.ToLargest}}"
                                                 HorizontalAlignment="Center"
                                                 Fill="{TemplateBinding BorderBrush}" />
                                             <Border
@@ -213,7 +213,7 @@
                                 WindowManagerAddShadowHint="False">
                                 <TimePickerPresenter
                                     Name="PART_PickerPresenter"
-                                    shadui:ScrollEventAssist.PreventScrollPropagation="True"
+                                    leotiaui:ScrollEventAssist.PreventScrollPropagation="True"
                                     CornerRadius="{TemplateBinding CornerRadius}"
                                     FontFamily="{TemplateBinding FontFamily}">
                                     <TimePickerPresenter.KeyBindings>
@@ -225,9 +225,9 @@
                         <TextBlock
                             Margin="0,4,0,0"
                             Classes="Caption Muted"
-                            IsVisible="{TemplateBinding shadui:ControlAssist.Hint,
+                            IsVisible="{TemplateBinding leotiaui:ControlAssist.Hint,
                                                         Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                            Text="{TemplateBinding shadui:ControlAssist.Hint}" />
+                            Text="{TemplateBinding leotiaui:ControlAssist.Hint}" />
                     </StackPanel>
                 </DataValidationErrors>
             </ControlTemplate>
@@ -416,7 +416,7 @@
                                 Name="PART_FirstSpacer"
                                 Grid.Column="1"
                                 Width="{TemplateBinding BorderThickness,
-                                                        Converter={x:Static shadui:ThicknessConverters.ToLargest}}"
+                                                        Converter={x:Static leotiaui:ThicknessConverters.ToLargest}}"
                                 HorizontalAlignment="Center">
                                 <Rectangle.Fill>
                                     <LinearGradientBrush StartPoint="48%,0%" EndPoint="50%,100%">
@@ -430,7 +430,7 @@
                                 Name="PART_SecondSpacer"
                                 Grid.Column="3"
                                 Width="{TemplateBinding BorderThickness,
-                                                        Converter={x:Static shadui:ThicknessConverters.ToLargest}}"
+                                                        Converter={x:Static leotiaui:ThicknessConverters.ToLargest}}"
                                 HorizontalAlignment="Center">
                                 <Rectangle.Fill>
                                     <LinearGradientBrush StartPoint="48%,0%" EndPoint="50%,100%">
@@ -444,7 +444,7 @@
                                 Name="PART_ThirdSpacer"
                                 Grid.Column="4"
                                 Width="{TemplateBinding BorderThickness,
-                                                        Converter={x:Static shadui:ThicknessConverters.ToLargest}}"
+                                                        Converter={x:Static leotiaui:ThicknessConverters.ToLargest}}"
                                 HorizontalAlignment="Center">
                                 <Rectangle.Fill>
                                     <LinearGradientBrush StartPoint="48%,0%" EndPoint="50%,100%">
@@ -462,7 +462,7 @@
                             <Rectangle
                                 Grid.ColumnSpan="2"
                                 Width="{TemplateBinding BorderThickness,
-                                                        Converter={x:Static shadui:ThicknessConverters.ToLargest}}"
+                                                        Converter={x:Static leotiaui:ThicknessConverters.ToLargest}}"
                                 VerticalAlignment="Top"
                                 Fill="{TemplateBinding BorderBrush}"
                                 IsVisible="False" />
@@ -470,7 +470,7 @@
                                 Name="PART_AcceptButton"
                                 Grid.Column="1"
                                 Margin="12,8"
-                                shadui:ElementAssist.FocusOnLoad="True"
+                                leotiaui:ElementAssist.FocusOnLoad="True"
                                 Classes="Outline">
                                 Apply
                             </Button>

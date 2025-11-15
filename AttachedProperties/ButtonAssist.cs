@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Media;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Useful extensions for the <see cref="Avalonia.Controls.Button" /> class.

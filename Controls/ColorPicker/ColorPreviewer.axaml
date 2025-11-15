@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI"
+    xmlns:leotiaui="clr-namespace:LeotiaUI"
     x:ClassModifier="internal">
     <ResourceDictionary.MergedDictionaries>
         <ResourceInclude Source="Common.axaml" />
@@ -31,16 +31,16 @@
                                 Name="PART_AccentDecrement2Border"
                                 Grid.Column="0"
                                 Background="{TemplateBinding HsvColor,
-                                                             Converter={x:Static shadui:BasicConverters.AccentColorConverter},
+                                                             Converter={x:Static leotiaui:BasicConverters.AccentColorConverter},
                                                              ConverterParameter='-2'}"
                                 CornerRadius="{TemplateBinding CornerRadius,
-                                                               Converter={x:Static shadui:CornerRadiusConverters.LeftOnly}}"
+                                                               Converter={x:Static leotiaui:CornerRadiusConverters.LeftOnly}}"
                                 Tag="-2" />
                             <Border
                                 Name="PART_AccentDecrement1Border"
                                 Grid.Column="1"
                                 Background="{TemplateBinding HsvColor,
-                                                             Converter={x:Static shadui:BasicConverters.AccentColorConverter},
+                                                             Converter={x:Static leotiaui:BasicConverters.AccentColorConverter},
                                                              ConverterParameter='-1'}"
                                 Tag="-1" />
                         </Grid>
@@ -60,17 +60,17 @@
                                 Name="PART_AccentIncrement1Border"
                                 Grid.Column="0"
                                 Background="{TemplateBinding HsvColor,
-                                                             Converter={x:Static shadui:BasicConverters.AccentColorConverter},
+                                                             Converter={x:Static leotiaui:BasicConverters.AccentColorConverter},
                                                              ConverterParameter='1'}"
                                 Tag="1" />
                             <Border
                                 Name="PART_AccentIncrement2Border"
                                 Grid.Column="1"
                                 Background="{TemplateBinding HsvColor,
-                                                             Converter={x:Static shadui:BasicConverters.AccentColorConverter},
+                                                             Converter={x:Static leotiaui:BasicConverters.AccentColorConverter},
                                                              ConverterParameter='2'}"
                                 CornerRadius="{TemplateBinding CornerRadius,
-                                                               Converter={x:Static shadui:CornerRadiusConverters.RightOnly}}"
+                                                               Converter={x:Static leotiaui:CornerRadiusConverters.RightOnly}}"
                                 Tag="2" />
                         </Grid>
                         <Border
@@ -85,7 +85,7 @@
                                     HorizontalAlignment="Stretch"
                                     VerticalAlignment="Stretch"
                                     Background="{TemplateBinding HsvColor,
-                                                                 Converter={x:Static shadui:BasicConverters.ToBrushConverter}}"
+                                                                 Converter={x:Static leotiaui:BasicConverters.ToBrushConverter}}"
                                     CornerRadius="{TemplateBinding CornerRadius}" />
                             </Panel>
                         </Border>
@@ -102,7 +102,7 @@
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Stretch"
                                 Background="{TemplateBinding HsvColor,
-                                                             Converter={x:Static shadui:BasicConverters.ToBrushConverter}}"
+                                                             Converter={x:Static leotiaui:BasicConverters.ToBrushConverter}}"
                                 CornerRadius="{TemplateBinding CornerRadius}" />
                         </Panel>
                     </Border>

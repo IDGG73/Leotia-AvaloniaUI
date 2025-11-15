@@ -1,6 +1,6 @@
 // ReSharper disable once CheckNamespace
 
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Defines the position of the toast.

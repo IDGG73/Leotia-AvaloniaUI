@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI">
+    xmlns:leotiaui="clr-namespace:LeotiaUI">
     <Design.PreviewWith>
         <Border Padding="24">
             <StackPanel Spacing="16">
@@ -43,7 +43,7 @@
                                 Margin="3"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
-                                Data="{x:Static shadui:Icons.Check}"
+                                Data="{x:Static leotiaui:Icons.Check}"
                                 Fill="{DynamicResource PrimaryForegroundColor}"
                                 FlowDirection="LeftToRight"
                                 Stretch="Uniform" />
@@ -52,7 +52,7 @@
                                 Margin="3"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
-                                Data="{x:Static shadui:Icons.Minus}"
+                                Data="{x:Static leotiaui:Icons.Minus}"
                                 Fill="{DynamicResource PrimaryForegroundColor}"
                                 FlowDirection="LeftToRight"
                                 IsVisible="False"

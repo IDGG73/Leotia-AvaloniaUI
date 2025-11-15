@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Rendering.Composition;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Useful extension methods for <see cref="Avalonia.Controls.StackPanel" />

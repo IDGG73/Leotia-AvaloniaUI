@@ -1,28 +1,28 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI"
+    xmlns:leotiaui="clr-namespace:LeotiaUI"
     xmlns:system="clr-namespace:System;assembly=System.Runtime">
     <Design.PreviewWith>
         <Panel Width="500" Height="500">
-            <shadui:SimpleDropdown
+            <leotiaui:SimpleDropdown
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Classes="Outline">
-                <shadui:SimpleDropdown.TriggerContent>
+                <leotiaui:SimpleDropdown.TriggerContent>
                     Show
-                </shadui:SimpleDropdown.TriggerContent>
-                <shadui:SimpleDropdown.MenuLabel>
+                </leotiaui:SimpleDropdown.TriggerContent>
+                <leotiaui:SimpleDropdown.MenuLabel>
                     <TextBlock Classes="Small" Text="Actions" />
-                </shadui:SimpleDropdown.MenuLabel>
+                </leotiaui:SimpleDropdown.MenuLabel>
                 <Button Content="Add New" />
                 <Button Content="Edit" IsEnabled="False" />
                 <Separator />
                 <Button Classes="DestructiveMenu" Content="Delete" />
-            </shadui:SimpleDropdown>
+            </leotiaui:SimpleDropdown>
         </Panel>
     </Design.PreviewWith>
-    <ControlTheme x:Key="{x:Type shadui:SimpleDropdown}" TargetType="{x:Type shadui:SimpleDropdown}">
+    <ControlTheme x:Key="{x:Type leotiaui:SimpleDropdown}" TargetType="{x:Type leotiaui:SimpleDropdown}">
         <Setter Property="FontWeight" Value="Medium" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="CornerRadius" Value="{DynamicResource LgCornerRadius}" />
@@ -92,7 +92,7 @@
                             IsLightDismissEnabled="True"
                             IsOpen="{TemplateBinding IsDropDownOpen,
                                                      Mode=TwoWay}"
-                            OverlayInputPassThroughElement="{CompiledBinding $parent[shadui:SimpleDropdown]}"
+                            OverlayInputPassThroughElement="{CompiledBinding $parent[leotiaui:SimpleDropdown]}"
                             Placement="{TemplateBinding PopupPlacement}"
                             VerticalOffset="{TemplateBinding PopupVerticalOffset}">
                             <LayoutTransformControl
@@ -101,7 +101,7 @@
                                 RenderTransformOrigin="50%, 0%">
                                 <Border
                                     Margin="2,0,2,4"
-                                    shadui:ScrollEventAssist.PreventScrollPropagation="True"
+                                    leotiaui:ScrollEventAssist.PreventScrollPropagation="True"
                                     Background="{DynamicResource CardBackgroundColor}"
                                     BorderBrush="{DynamicResource BorderColor}"
                                     BorderThickness="1"

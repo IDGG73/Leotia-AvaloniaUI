@@ -3,7 +3,7 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Media;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Represents an avatar control that displays an image.

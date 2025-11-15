@@ -2,7 +2,7 @@
 using Avalonia.Data.Converters;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Provides value converters for boolean operations and transformations.

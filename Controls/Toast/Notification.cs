@@ -1,5 +1,5 @@
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Defines the type of notification.

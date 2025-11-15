@@ -8,7 +8,7 @@ using Avalonia.Media;
 using Avalonia.Threading;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Represents a selectable item within a sidebar control.

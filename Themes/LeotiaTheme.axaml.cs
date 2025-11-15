@@ -2,17 +2,17 @@
 using Avalonia.Styling;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     The main theme for the application.
 /// </summary>
-public class ShadTheme : Styles
+public class LeotiaTheme : Styles
 {
     /// <summary>
-    ///     Returns a new instance of the <see cref="ShadTheme" /> class.
+    ///     Returns a new instance of the <see cref="LeotiaTheme" /> class.
     /// </summary>
-    public ShadTheme()
+    public LeotiaTheme()
     {
         AvaloniaXamlLoader.Load(this);
     }

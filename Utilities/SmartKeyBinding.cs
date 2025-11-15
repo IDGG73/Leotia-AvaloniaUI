@@ -5,7 +5,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     A smart key binding that provides special handling for TextBox controls while maintaining regular key binding

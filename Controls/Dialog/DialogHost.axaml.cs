@@ -11,7 +11,7 @@ using Avalonia.Interactivity;
 using Avalonia.Reactive;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Dialog host control that manages the display and lifecycle of dialogs within a window.

@@ -4,7 +4,7 @@ using Avalonia.Controls;
 using Avalonia.Data;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Provides attached properties for enhancing TextBox functionality.

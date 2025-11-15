@@ -5,7 +5,7 @@ using Avalonia.Controls.Templates;
 using Avalonia.Markup.Xaml;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Provides functionality to include and load data templates from external XAML sources.

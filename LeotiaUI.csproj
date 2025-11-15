@@ -14,24 +14,24 @@
         <IsPackable>true</IsPackable>
         <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageDescription>Leotia Design System for Avalonia UI. Based on shad-ui</PackageDescription>
+        <PackageDescription>Leotia Design System for Avalonia UI. Based on leotia-ui</PackageDescription>
         <PackageTags>avalonia;avaloniaui;ui;theme;leotia</PackageTags>
-        <PackageProjectUrl>https://github.com/accntech/shad-ui.git</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/accntech/shad-ui.git</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/IDGG73/Leotia-AvaloniaUI.git</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/IDGG73/Leotia-AvaloniaUI.git</RepositoryUrl>
         <PackageIcon>icon.png</PackageIcon>
         <Authors>IDGG73</Authors>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.3.1" />
-        <PackageReference Include="Avalonia.Controls.ColorPicker" Version="11.3.1" />
-        <PackageReference Include="Avalonia.Skia" Version="11.3.1" />
+        <PackageReference Include="Avalonia" Version="11.3.8" />
+        <PackageReference Include="Avalonia.Controls.ColorPicker" Version="11.3.8" />
+        <PackageReference Include="Avalonia.Skia" Version="11.3.8" />
         <PackageReference Include="MinVer" Version="6.0.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Avalonia.Themes.Simple" Version="11.3.1" />
-        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.1" />
+        <PackageReference Include="Avalonia.Themes.Simple" Version="11.3.8" />
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.8" />
     </ItemGroup>
 
     <PropertyGroup>

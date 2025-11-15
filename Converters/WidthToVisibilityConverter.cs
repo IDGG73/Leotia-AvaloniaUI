@@ -4,7 +4,7 @@ using System.Globalization;
 using Avalonia.Data.Converters;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Converts the width and breakpoint to a visibility value.

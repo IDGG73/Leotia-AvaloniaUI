@@ -9,7 +9,7 @@ using Avalonia.Input;
 using Avalonia.Threading;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 [TemplatePart("PART_ToastCard", typeof(Border))]
 [TemplatePart("PART_ActionButton", typeof(Button))]

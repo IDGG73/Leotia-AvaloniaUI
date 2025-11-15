@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI"
+    xmlns:leotiaui="clr-namespace:LeotiaUI"
     x:ClassModifier="internal">
     <Design.PreviewWith>
         <Panel Width="500" Height="500">
@@ -55,7 +55,7 @@
                                     VerticalAlignment="Top"
                                     Background="{TemplateBinding HeaderBackground}"
                                     CornerRadius="{TemplateBinding CornerRadius,
-                                                                   Converter={x:Static shadui:CornerRadiusConverters.TopOnly}}" />
+                                                                   Converter={x:Static leotiaui:CornerRadiusConverters.TopOnly}}" />
                                 <Button
                                     Name="PART_PreviousButton"
                                     Grid.Row="0"
@@ -67,7 +67,7 @@
                                     BorderBrush="{DynamicResource BorderColor}"
                                     Classes="Icon"
                                     Opacity="0.5">
-                                    <PathIcon Height="9" Data="{x:Static shadui:Icons.ChevronLeft}" />
+                                    <PathIcon Height="9" Data="{x:Static leotiaui:Icons.ChevronLeft}" />
                                 </Button>
                                 <Button
                                     Name="PART_HeaderButton"
@@ -76,7 +76,7 @@
                                     Padding="16,8"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
-                                    shadui:ButtonAssist.HoverBackground="{DynamicResource GhostHoverColor}"
+                                    leotiaui:ButtonAssist.HoverBackground="{DynamicResource GhostHoverColor}"
                                     Classes="CalendarHeader"
                                     FontSize="14"
                                     FontWeight="Bold" />
@@ -91,7 +91,7 @@
                                     BorderBrush="{DynamicResource BorderColor}"
                                     Classes="Icon"
                                     Opacity="0.5">
-                                    <PathIcon Height="9" Data="{x:Static shadui:Icons.ChevronRight}" />
+                                    <PathIcon Height="9" Data="{x:Static leotiaui:Icons.ChevronRight}" />
                                 </Button>
                                 <Grid
                                     Name="PART_MonthView"

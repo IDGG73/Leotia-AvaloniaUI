@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Avalonia.Controls;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Builds a dialog.

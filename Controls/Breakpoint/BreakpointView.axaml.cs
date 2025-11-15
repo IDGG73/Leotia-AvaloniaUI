@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Represents a view that can change its layout based on breakpoints.

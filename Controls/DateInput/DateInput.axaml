@@ -1,30 +1,30 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI"
+    xmlns:leotiaui="clr-namespace:LeotiaUI"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceInclude Source="avares://ShadUI/Controls/Common.axaml" />
+        <ResourceInclude Source="avares://LeotiaUI/Controls/Common.axaml" />
     </ResourceDictionary.MergedDictionaries>
     <Design.PreviewWith>
         <Border Height="500" Padding="24">
             <StackPanel Spacing="8">
-                <shadui:DateInput
+                <leotiaui:DateInput
                     Width="255"
                     HorizontalAlignment="Left"
-                    shadui:ElementAssist.FocusOnLoad="True" />
-                <shadui:DateInput shadui:ControlAssist.Label="Start date" />
-                <shadui:DateInput shadui:ControlAssist.Hint="Set end date" shadui:ControlAssist.Label="End date" />
-                <shadui:DateInput shadui:ControlAssist.Label="Disable" IsEnabled="False" />
-                <shadui:DateInput Width="255">
+                    leotiaui:ElementAssist.FocusOnLoad="True" />
+                <leotiaui:DateInput leotiaui:ControlAssist.Label="Start date" />
+                <leotiaui:DateInput leotiaui:ControlAssist.Hint="Set end date" leotiaui:ControlAssist.Label="End date" />
+                <leotiaui:DateInput leotiaui:ControlAssist.Label="Disable" IsEnabled="False" />
+                <leotiaui:DateInput Width="255">
                     <DataValidationErrors.Error>
                         <system:Exception />
                     </DataValidationErrors.Error>
-                </shadui:DateInput>
+                </leotiaui:DateInput>
             </StackPanel>
         </Border>
     </Design.PreviewWith>
-    <ControlTheme x:Key="{x:Type shadui:DateInput}" TargetType="{x:Type shadui:DateInput}">
+    <ControlTheme x:Key="{x:Type leotiaui:DateInput}" TargetType="{x:Type leotiaui:DateInput}">
         <Setter Property="Padding" Value="4" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Background" Value="{DynamicResource SelectionColor}" />
@@ -32,7 +32,7 @@
         <Setter Property="CornerRadius" Value="{DynamicResource LgCornerRadius}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}" />
-        <Setter Property="shadui:ElementAssist.FocusOnLoad" Value="False" />
+        <Setter Property="leotiaui:ElementAssist.FocusOnLoad" Value="False" />
         <Setter Property="Template">
             <ControlTemplate>
                 <StackPanel Background="Transparent" Focusable="False">
@@ -40,9 +40,9 @@
                         Name="Label"
                         Margin="0,0,0,6"
                         Classes="Small"
-                        IsVisible="{TemplateBinding shadui:ControlAssist.Label,
+                        IsVisible="{TemplateBinding leotiaui:ControlAssist.Label,
                                                     Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                        Text="{TemplateBinding shadui:ControlAssist.Label}" />
+                        Text="{TemplateBinding leotiaui:ControlAssist.Label}" />
                     <DataValidationErrors Focusable="False">
                         <StackPanel>
                             <Border
@@ -58,7 +58,7 @@
                                     <TextBox
                                         Name="PART_MonthTextBox"
                                         Grid.Column="0"
-                                        shadui:ElementAssist.FocusOnLoad="{TemplateBinding shadui:ElementAssist.FocusOnLoad}"
+                                        leotiaui:ElementAssist.FocusOnLoad="{TemplateBinding leotiaui:ElementAssist.FocusOnLoad}"
                                         Background="Transparent"
                                         Cursor="IBeam"
                                         MaxLength="2"
@@ -106,9 +106,9 @@
                                 Name="PART_Hint"
                                 Margin="0,4,0,0"
                                 Classes="Caption Muted"
-                                IsVisible="{TemplateBinding shadui:ControlAssist.Hint,
+                                IsVisible="{TemplateBinding leotiaui:ControlAssist.Hint,
                                                             Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                                Text="{TemplateBinding shadui:ControlAssist.Hint}" />
+                                Text="{TemplateBinding leotiaui:ControlAssist.Hint}" />
                         </StackPanel>
                     </DataValidationErrors>
                 </StackPanel>

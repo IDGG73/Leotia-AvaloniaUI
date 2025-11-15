@@ -1,10 +1,10 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI"
+    xmlns:leotiaui="clr-namespace:LeotiaUI"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceInclude Source="avares://ShadUI/Controls/Common.axaml" />
+        <ResourceInclude Source="avares://LeotiaUI/Controls/Common.axaml" />
     </ResourceDictionary.MergedDictionaries>
     <Design.PreviewWith>
         <Border
@@ -12,15 +12,15 @@
             Height="500"
             Padding="24">
             <StackPanel Spacing="8">
-                <shadui:TimeInput ClockIdentifier="12HourClock" UseSeconds="True" />
-                <shadui:TimeInput shadui:ControlAssist.Label="Start time" />
-                <shadui:TimeInput shadui:ControlAssist.Hint="Set end time" shadui:ControlAssist.Label="End time" />
-                <shadui:TimeInput shadui:ControlAssist.Label="Disable" IsEnabled="False" />
-                <shadui:TimeInput>
+                <leotiaui:TimeInput ClockIdentifier="12HourClock" UseSeconds="True" />
+                <leotiaui:TimeInput leotiaui:ControlAssist.Label="Start time" />
+                <leotiaui:TimeInput leotiaui:ControlAssist.Hint="Set end time" leotiaui:ControlAssist.Label="End time" />
+                <leotiaui:TimeInput leotiaui:ControlAssist.Label="Disable" IsEnabled="False" />
+                <leotiaui:TimeInput>
                     <DataValidationErrors.Error>
                         <system:Exception />
                     </DataValidationErrors.Error>
-                </shadui:TimeInput>
+                </leotiaui:TimeInput>
             </StackPanel>
         </Border>
     </Design.PreviewWith>
@@ -97,7 +97,7 @@
             <Setter Property="Content" Value="AM" />
         </Style>
     </ControlTheme>
-    <ControlTheme x:Key="{x:Type shadui:TimeInput}" TargetType="{x:Type shadui:TimeInput}">
+    <ControlTheme x:Key="{x:Type leotiaui:TimeInput}" TargetType="{x:Type leotiaui:TimeInput}">
         <Setter Property="Padding" Value="4" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Background" Value="{DynamicResource SelectionColor}" />
@@ -105,7 +105,7 @@
         <Setter Property="CornerRadius" Value="{DynamicResource LgCornerRadius}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}" />
-        <Setter Property="shadui:ElementAssist.FocusOnLoad" Value="False" />
+        <Setter Property="leotiaui:ElementAssist.FocusOnLoad" Value="False" />
         <Setter Property="Template">
             <ControlTemplate>
                 <StackPanel Background="Transparent" Focusable="False">
@@ -113,9 +113,9 @@
                         Name="Label"
                         Margin="0,0,0,6"
                         Classes="Small"
-                        IsVisible="{TemplateBinding shadui:ControlAssist.Label,
+                        IsVisible="{TemplateBinding leotiaui:ControlAssist.Label,
                                                     Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                        Text="{TemplateBinding shadui:ControlAssist.Label}" />
+                        Text="{TemplateBinding leotiaui:ControlAssist.Label}" />
                     <DataValidationErrors Focusable="False">
                         <StackPanel>
                             <Border
@@ -131,7 +131,7 @@
                                     <TextBox
                                         Name="PART_HourTextBox"
                                         Grid.Column="0"
-                                        shadui:ElementAssist.FocusOnLoad="{TemplateBinding shadui:ElementAssist.FocusOnLoad}"
+                                        leotiaui:ElementAssist.FocusOnLoad="{TemplateBinding leotiaui:ElementAssist.FocusOnLoad}"
                                         Cursor="IBeam"
                                         Text="{TemplateBinding HourString,
                                                                Mode=TwoWay}"
@@ -174,7 +174,7 @@
                                         Grid.Column="5"
                                         Margin="8,0,0,0"
                                         IsVisible="{TemplateBinding ClockIdentifier,
-                                                                    Converter={x:Static shadui:StringConverters.IsMatch},
+                                                                    Converter={x:Static leotiaui:StringConverters.IsMatch},
                                                                     ConverterParameter='12HourClock'}"
                                         Theme="{StaticResource ToggleButtonTheme}" />
                                 </Grid>
@@ -182,9 +182,9 @@
                             <TextBlock
                                 Margin="0,4,0,0"
                                 Classes="Caption Muted"
-                                IsVisible="{TemplateBinding shadui:ControlAssist.Hint,
+                                IsVisible="{TemplateBinding leotiaui:ControlAssist.Hint,
                                                             Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                                Text="{TemplateBinding shadui:ControlAssist.Hint}" />
+                                Text="{TemplateBinding leotiaui:ControlAssist.Hint}" />
                         </StackPanel>
                     </DataValidationErrors>
                 </StackPanel>

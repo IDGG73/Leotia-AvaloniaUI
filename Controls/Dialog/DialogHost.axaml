@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI">
-    <ControlTheme x:Key="DialogHostTheme" TargetType="shadui:DialogHost">
+    xmlns:leotiaui="clr-namespace:LeotiaUI">
+    <ControlTheme x:Key="DialogHostTheme" TargetType="leotiaui:DialogHost">
         <Setter Property="CornerRadius" Value="{DynamicResource XlCornerRadius}" />
         <Setter Property="Template">
             <ControlTemplate>
@@ -74,7 +74,7 @@
                                 <PathIcon
                                     Width="10"
                                     Height="10"
-                                    Data="{x:Static shadui:Icons.WindowClose}"
+                                    Data="{x:Static leotiaui:Icons.WindowClose}"
                                     Foreground="{DynamicResource ForegroundColor}" />
                             </Button>
                         </Panel>
@@ -128,7 +128,7 @@
         </Style>
     </ControlTheme>
     <ControlTheme
-        x:Key="{x:Type shadui:DialogHost}"
+        x:Key="{x:Type leotiaui:DialogHost}"
         BasedOn="{StaticResource DialogHostTheme}"
-        TargetType="shadui:DialogHost" />
+        TargetType="leotiaui:DialogHost" />
 </ResourceDictionary>

@@ -7,7 +7,7 @@ using Avalonia.Layout;
 using Avalonia.Reactive;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     The host for toast notifications.

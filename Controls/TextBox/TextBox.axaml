@@ -1,10 +1,10 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI"
+    xmlns:leotiaui="clr-namespace:LeotiaUI"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceInclude Source="avares://ShadUI/Controls/Common.axaml" />
+        <ResourceInclude Source="avares://LeotiaUI/Controls/Common.axaml" />
     </ResourceDictionary.MergedDictionaries>
     <Design.PreviewWith>
         <Border Padding="20">
@@ -22,7 +22,7 @@
                     Text="john"
                     Watermark="Username" />
                 <TextBox
-                    shadui:ControlAssist.Label="Search"
+                    leotiaui:ControlAssist.Label="Search"
                     Classes="Clearable"
                     Text="12321"
                     Watermark="Search here...">
@@ -30,23 +30,23 @@
                         <PathIcon
                             Width="16"
                             Height="32"
-                            Data="{x:Static shadui:Icons.Search}"
+                            Data="{x:Static leotiaui:Icons.Search}"
                             Opacity="0.75" />
                     </TextBox.InnerRightContent>
                 </TextBox>
                 <TextBox
-                    shadui:ControlAssist.Label="Password"
+                    leotiaui:ControlAssist.Label="Password"
                     Classes="ClearablePassword"
                     PasswordChar="•"
                     Text="12321"
                     Watermark="Enter password" />
                 <TextBox
-                    shadui:ControlAssist.Height="250"
-                    shadui:ControlAssist.Hint="This is hint"
-                    shadui:ControlAssist.Label="Description"
+                    leotiaui:ControlAssist.Height="250"
+                    leotiaui:ControlAssist.Hint="This is hint"
+                    leotiaui:ControlAssist.Label="Description"
                     AcceptsReturn="True"
                     Watermark="Description" />
-                <TextBox shadui:ControlAssist.Label="Error">
+                <TextBox leotiaui:ControlAssist.Label="Error">
                     <DataValidationErrors.Error>
                         <system:Exception />
                     </DataValidationErrors.Error>
@@ -128,8 +128,8 @@
         <Setter Property="SelectionForegroundBrush" Value="{DynamicResource PrimaryForegroundColor}" />
         <Setter Property="CaretBrush" Value="{DynamicResource ForegroundColor}" />
         <Setter Property="FocusAdorner" Value="{x:Null}" />
-        <Setter Property="shadui:ControlAssist.ShowProgress" Value="False" />
-        <Setter Property="shadui:ControlAssist.MinHeight" Value="36" />
+        <Setter Property="leotiaui:ControlAssist.ShowProgress" Value="False" />
+        <Setter Property="leotiaui:ControlAssist.MinHeight" Value="36" />
         <Setter Property="Template">
             <ControlTemplate>
                 <StackPanel Background="Transparent" Focusable="False">
@@ -144,8 +144,8 @@
                         <StackPanel>
                             <Border
                                 Name="Border"
-                                Height="{TemplateBinding shadui:ControlAssist.Height}"
-                                MinHeight="{TemplateBinding shadui:ControlAssist.MinHeight}"
+                                Height="{TemplateBinding leotiaui:ControlAssist.Height}"
+                                MinHeight="{TemplateBinding leotiaui:ControlAssist.MinHeight}"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
@@ -219,14 +219,14 @@
                                         Margin="0,4,12,4"
                                         VerticalAlignment="Center"
                                         Content="{TemplateBinding InnerRightContent}"
-                                        IsVisible="{TemplateBinding shadui:ControlAssist.ShowProgress,
+                                        IsVisible="{TemplateBinding leotiaui:ControlAssist.ShowProgress,
                                                                     Converter={x:Static BoolConverters.Not}}" />
                                     <ContentPresenter
                                         Name="ClearButton"
                                         Grid.Column="2"
                                         Margin="0,4,12,4"
                                         VerticalAlignment="Center"
-                                        IsVisible="{TemplateBinding shadui:ControlAssist.ShowProgress,
+                                        IsVisible="{TemplateBinding leotiaui:ControlAssist.ShowProgress,
                                                                     Converter={x:Static BoolConverters.Not}}" />
                                     <ContentPresenter
                                         Name="LoadingIndicator"
@@ -235,9 +235,9 @@
                                         Height="20"
                                         Margin="0,4,12,4"
                                         VerticalAlignment="Center"
-                                        Content="{TemplateBinding shadui:ControlAssist.ShowProgress,
-                                                                  Converter={x:Static shadui:BooleanConverters.ToLoading}}"
-                                        IsVisible="{TemplateBinding shadui:ControlAssist.ShowProgress}" />
+                                        Content="{TemplateBinding leotiaui:ControlAssist.ShowProgress,
+                                                                  Converter={x:Static leotiaui:BooleanConverters.ToLoading}}"
+                                        IsVisible="{TemplateBinding leotiaui:ControlAssist.ShowProgress}" />
                                 </Grid>
                             </Border>
                             <TextBlock
@@ -245,9 +245,9 @@
                                 Margin="0,4,0,0"
                                 Classes="Caption Muted"
                                 Cursor="Arrow"
-                                IsVisible="{TemplateBinding shadui:ControlAssist.Hint,
+                                IsVisible="{TemplateBinding leotiaui:ControlAssist.Hint,
                                                             Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                                Text="{TemplateBinding shadui:ControlAssist.Hint}" />
+                                Text="{TemplateBinding leotiaui:ControlAssist.Hint}" />
                         </StackPanel>
                     </DataValidationErrors>
                 </StackPanel>

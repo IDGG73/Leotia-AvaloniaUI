@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Builds a simple dialog.

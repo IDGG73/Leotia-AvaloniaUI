@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Provides attached properties for handling scroll events in popups and overlays.

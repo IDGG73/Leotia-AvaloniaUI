@@ -1,21 +1,21 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI">
+    xmlns:leotiaui="clr-namespace:LeotiaUI">
     <Design.PreviewWith>
         <Border Padding="24">
-            <shadui:Card VerticalAlignment="Center" HasShadow="True">
-                <shadui:Card.Header>
+            <leotiaui:Card VerticalAlignment="Center" HasShadow="True">
+                <leotiaui:Card.Header>
                     <StackPanel>
-                        <shadui:CardTitle>Create project</shadui:CardTitle>
-                        <shadui:CardDescription>Deploy your new project in one-click.</shadui:CardDescription>
+                        <leotiaui:CardTitle>Create project</leotiaui:CardTitle>
+                        <leotiaui:CardDescription>Deploy your new project in one-click.</leotiaui:CardDescription>
                     </StackPanel>
-                </shadui:Card.Header>
+                </leotiaui:Card.Header>
                 <StackPanel Spacing="16">
-                    <TextBox shadui:ControlAssist.Label="Name" Watermark="Name of your project" />
+                    <TextBox leotiaui:ControlAssist.Label="Name" Watermark="Name of your project" />
                     <ComboBox
                         Width="300"
-                        shadui:ControlAssist.Label="Framework"
+                        leotiaui:ControlAssist.Label="Framework"
                         SelectedIndex="0">
                         <ComboBox.Items>
                             <ComboBoxItem>Next.js</ComboBoxItem>
@@ -25,7 +25,7 @@
                         </ComboBox.Items>
                     </ComboBox>
                 </StackPanel>
-                <shadui:Card.Footer>
+                <leotiaui:Card.Footer>
                     <DockPanel>
                         <Button
                             Margin="0,20,0,0"
@@ -40,12 +40,12 @@
                             Deploy
                         </Button>
                     </DockPanel>
-                </shadui:Card.Footer>
-            </shadui:Card>
+                </leotiaui:Card.Footer>
+            </leotiaui:Card>
         </Border>
     </Design.PreviewWith>
 
-    <ControlTheme x:Key="CardControlTheme" TargetType="{x:Type shadui:Card}">
+    <ControlTheme x:Key="CardControlTheme" TargetType="{x:Type leotiaui:Card}">
         <Setter Property="Padding" Value="24" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Background" Value="{DynamicResource CardBackgroundColor}" />
@@ -100,7 +100,7 @@
         </Style>
     </ControlTheme>
     <ControlTheme
-        x:Key="{x:Type shadui:Card}"
+        x:Key="{x:Type leotiaui:Card}"
         BasedOn="{StaticResource CardControlTheme}"
-        TargetType="{x:Type shadui:Card}" />
+        TargetType="{x:Type leotiaui:Card}" />
 </ResourceDictionary>

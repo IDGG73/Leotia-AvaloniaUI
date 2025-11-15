@@ -1,43 +1,43 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI">
+    xmlns:leotiaui="clr-namespace:LeotiaUI">
     <Design.PreviewWith>
         <Border Padding="12">
             <StackPanel Spacing="8">
                 <Button
                     Height="{DynamicResource SingleLineHeight}"
                     Padding="50"
-                    shadui:ButtonAssist.ShowProgress="True"
+                    leotiaui:ButtonAssist.ShowProgress="True"
                     Content="Default" />
                 <Button
-                    shadui:ButtonAssist.ShowProgress="True"
+                    leotiaui:ButtonAssist.ShowProgress="True"
                     Classes="Primary"
                     Content="Primary" />
                 <Button
-                    shadui:ButtonAssist.ShowProgress="True"
+                    leotiaui:ButtonAssist.ShowProgress="True"
                     Classes="Secondary"
                     Content="Secondary" />
                 <Button
-                    shadui:ButtonAssist.ShowProgress="True"
+                    leotiaui:ButtonAssist.ShowProgress="True"
                     Classes="Destructive"
                     Content="Destructive" />
                 <Button
-                    shadui:ButtonAssist.ShowProgress="True"
+                    leotiaui:ButtonAssist.ShowProgress="True"
                     Classes="Outline"
                     Content="Outline" />
                 <Button
-                    shadui:ButtonAssist.ShowProgress="True"
+                    leotiaui:ButtonAssist.ShowProgress="True"
                     Classes="Ghost"
                     Content="Ghost">
-                    <shadui:ButtonAssist.Icon>
-                        <PathIcon Height="{DynamicResource SingleLineHeight}" Data="{x:Static shadui:Icons.Cross}" />
-                    </shadui:ButtonAssist.Icon>
+                    <leotiaui:ButtonAssist.Icon>
+                        <PathIcon Height="{DynamicResource SingleLineHeight}" Data="{x:Static leotiaui:Icons.Cross}" />
+                    </leotiaui:ButtonAssist.Icon>
                 </Button>
                 <Button BorderBrush="{DynamicResource BorderColor}" Classes="Icon">
-                    <shadui:ButtonAssist.Icon>
-                        <PathIcon Height="{DynamicResource SingleLineHeight}" Data="{x:Static shadui:Icons.Cross}" />
-                    </shadui:ButtonAssist.Icon>
+                    <leotiaui:ButtonAssist.Icon>
+                        <PathIcon Height="{DynamicResource SingleLineHeight}" Data="{x:Static leotiaui:Icons.Cross}" />
+                    </leotiaui:ButtonAssist.Icon>
                 </Button>
             </StackPanel>
         </Border>
@@ -54,9 +54,9 @@
 		<Setter Property="BorderBrush" Value="{DynamicResource BorderColor}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
-        <Setter Property="shadui:ButtonAssist.Icon" Value="{x:Null}" />
-        <Setter Property="shadui:ButtonAssist.ShowProgress" Value="False" />
-        <Setter Property="shadui:ButtonAssist.HoverBackground" Value="{DynamicResource GhostColor}" />
+        <Setter Property="leotiaui:ButtonAssist.Icon" Value="{x:Null}" />
+        <Setter Property="leotiaui:ButtonAssist.ShowProgress" Value="False" />
+        <Setter Property="leotiaui:ButtonAssist.HoverBackground" Value="{DynamicResource GhostColor}" />
         <Setter Property="Template">
             <ControlTemplate>
                 <Panel Name="RootPanel">
@@ -80,7 +80,7 @@
                     </Border>
                     <Border
                         Name="HoverBackground"
-                        Background="{TemplateBinding shadui:ButtonAssist.HoverBackground}"
+                        Background="{TemplateBinding leotiaui:ButtonAssist.HoverBackground}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         CornerRadius="{TemplateBinding CornerRadius}"
@@ -99,29 +99,29 @@
                         CornerRadius="{TemplateBinding CornerRadius}"
                         TextElement.Foreground="{TemplateBinding Foreground}">
                         <StackPanel HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Orientation="Horizontal">
-                            <Viewbox Width="{TemplateBinding shadui:ButtonAssist.ShowProgress, Converter={x:Static shadui:BooleanConverters.ToZeroOrDouble}, ConverterParameter='24'}" Height="16">
+                            <Viewbox Width="{TemplateBinding leotiaui:ButtonAssist.ShowProgress, Converter={x:Static leotiaui:BooleanConverters.ToZeroOrDouble}, ConverterParameter='24'}" Height="16">
                                 <Viewbox.Transitions>
                                     <Transitions>
                                         <DoubleTransition Property="Width" Duration="0:0:0.10" />
                                     </Transitions>
                                 </Viewbox.Transitions>
-                                <ContentPresenter Content="{TemplateBinding shadui:ButtonAssist.ShowProgress, Converter={x:Static shadui:BooleanConverters.ToLoading}}" />
+                                <ContentPresenter Content="{TemplateBinding leotiaui:ButtonAssist.ShowProgress, Converter={x:Static leotiaui:BooleanConverters.ToLoading}}" />
                             </Viewbox>
                             <Viewbox
-                                Width="{TemplateBinding shadui:ButtonAssist.ShowProgress,
-                                                        Converter={x:Static shadui:BooleanConverters.ToDoubleOrZero},
+                                Width="{TemplateBinding leotiaui:ButtonAssist.ShowProgress,
+                                                        Converter={x:Static leotiaui:BooleanConverters.ToDoubleOrZero},
                                                         ConverterParameter='24'}"
-                                IsVisible="{TemplateBinding shadui:ButtonAssist.Icon,
+                                IsVisible="{TemplateBinding leotiaui:ButtonAssist.Icon,
                                                             Converter={x:Static ObjectConverters.IsNotNull}}"
-                                Opacity="{TemplateBinding shadui:ButtonAssist.ShowProgress,
-                                                          Converter={x:Static shadui:BooleanConverters.ToInverseOpacity}}">
+                                Opacity="{TemplateBinding leotiaui:ButtonAssist.ShowProgress,
+                                                          Converter={x:Static leotiaui:BooleanConverters.ToInverseOpacity}}">
                                 <Viewbox.Transitions>
                                     <Transitions>
                                         <DoubleTransition Property="Opacity" Duration="0:0:0.15" />
                                         <DoubleTransition Property="Width" Duration="0:0:0.10" />
                                     </Transitions>
                                 </Viewbox.Transitions>
-                                <ContentPresenter x:Name="Icon" Content="{TemplateBinding shadui:ButtonAssist.Icon}" />
+                                <ContentPresenter x:Name="Icon" Content="{TemplateBinding leotiaui:ButtonAssist.Icon}" />
                             </Viewbox>
                             <ContentPresenter
                                 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"

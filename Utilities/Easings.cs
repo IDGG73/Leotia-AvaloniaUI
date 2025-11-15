@@ -2,7 +2,7 @@
 using Avalonia.Animation.Easings;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Defines the intensity levels for easing animations.

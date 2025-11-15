@@ -11,7 +11,7 @@ using Avalonia.Media;
 
 // Original source code from: https://gist.github.com/tobyfirth/65c5372be2e659141c1c4b7d99e3e268#file-mainwindow-axaml-cs
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 internal static class OnScreenKeyboard
 {

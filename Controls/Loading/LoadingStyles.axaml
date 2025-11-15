@@ -1,39 +1,39 @@
 ﻿<Styles
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI">
-    <Style Selector="Button shadui|Loading">
+    xmlns:leotiaui="clr-namespace:LeotiaUI">
+    <Style Selector="Button leotiaui|Loading">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
     </Style>
-    <Style Selector="Button.Primary shadui|Loading">
+    <Style Selector="Button.Primary leotiaui|Loading">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryForegroundColor}" />
     </Style>
 
-    <Style Selector="Button.Secondary shadui|Loading">
+    <Style Selector="Button.Secondary leotiaui|Loading">
         <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundColor}" />
     </Style>
 
-    <Style Selector="Button.Destructive shadui|Loading">
+    <Style Selector="Button.Destructive leotiaui|Loading">
         <Setter Property="Foreground" Value="{DynamicResource DestructiveForegroundColor}" />
     </Style>
 
-    <Style Selector="Button.Outline shadui|Loading">
+    <Style Selector="Button.Outline leotiaui|Loading">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
     </Style>
 
-    <Style Selector="Button.Ghost shadui|Loading">
+    <Style Selector="Button.Ghost leotiaui|Loading">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
     </Style>
 
-    <Style Selector="Button.Icon shadui|Loading">
+    <Style Selector="Button.Icon leotiaui|Loading">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
     </Style>
 
-    <Style Selector="Button.DestructiveIcon shadui|Loading">
+    <Style Selector="Button.DestructiveIcon leotiaui|Loading">
         <Setter Property="Foreground" Value="{DynamicResource DestructiveForegroundColor}" />
     </Style>
 
-    <Style Selector="TextBox shadui|Loading">
+    <Style Selector="TextBox leotiaui|Loading">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryColor}" />
     </Style>
 </Styles>

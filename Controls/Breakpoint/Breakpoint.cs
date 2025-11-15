@@ -1,5 +1,5 @@
 ﻿// ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Represents the different breakpoints for responsive design.

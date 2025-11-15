@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI">
+    xmlns:leotiaui="clr-namespace:LeotiaUI">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceInclude Source="avares://ShadUI/Controls/Common.axaml" />
+        <ResourceInclude Source="avares://LeotiaUI/Controls/Common.axaml" />
     </ResourceDictionary.MergedDictionaries>
     <ControlTheme x:Key="InnerTextBoxTheme" TargetType="TextBox">
         <Setter Property="FontSize" Value="14" />
@@ -15,7 +15,7 @@
         <Setter Property="CaretBrush" Value="{DynamicResource ForegroundColor}" />
         <Setter Property="FocusAdorner" Value="{x:Null}" />
         <Setter Property="IsReadOnly" Value="True" />
-        <Setter Property="shadui:TextBoxAssist.Clearable" Value="False" />
+        <Setter Property="leotiaui:TextBoxAssist.Clearable" Value="False" />
         <Setter Property="Template">
             <ControlTemplate>
                 <Grid
@@ -99,7 +99,7 @@
         <Style Selector="^:readonly">
             <Setter Property="CaretBrush" Value="Transparent" />
         </Style>
-        <Style Selector="^[IsReadOnly=False][(shadui|TextBoxAssist.Clearable)=True]:focus:not(TextBox:empty)">
+        <Style Selector="^[IsReadOnly=False][(leotiaui|TextBoxAssist.Clearable)=True]:focus:not(TextBox:empty)">
             <Style Selector="^ /template/ ContentPresenter#InnerRightContent">
                 <Setter Property="IsVisible" Value="False" />
                 <Setter Property="IsHitTestVisible" Value="False" />
@@ -123,7 +123,7 @@
         <Setter Property="CornerRadius" Value="{DynamicResource LgCornerRadius}" />
 
         <!--  setting this to prevent focus issues with the TextBox inside ButtonSpinner  -->
-        <Setter Property="shadui:ElementAssist.AttachFocus" Value="TextBox" />
+        <Setter Property="leotiaui:ElementAssist.AttachFocus" Value="TextBox" />
 
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Padding" Value="12,7" />
@@ -134,9 +134,9 @@
                         Name="Label"
                         Margin="0,0,0,6"
                         Classes="Small"
-                        IsVisible="{TemplateBinding shadui:ControlAssist.Label,
+                        IsVisible="{TemplateBinding leotiaui:ControlAssist.Label,
                                                     Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                        Text="{TemplateBinding shadui:ControlAssist.Label}" />
+                        Text="{TemplateBinding leotiaui:ControlAssist.Label}" />
                     <DataValidationErrors>
                         <StackPanel>
                             <ButtonSpinner
@@ -174,9 +174,9 @@
                                 Margin="0,4,0,0"
                                 Classes="Caption Muted"
                                 Cursor="Arrow"
-                                IsVisible="{TemplateBinding shadui:ControlAssist.Hint,
+                                IsVisible="{TemplateBinding leotiaui:ControlAssist.Hint,
                                                             Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                                Text="{TemplateBinding shadui:ControlAssist.Hint}" />
+                                Text="{TemplateBinding leotiaui:ControlAssist.Hint}" />
                         </StackPanel>
                     </DataValidationErrors>
                 </StackPanel>
@@ -194,7 +194,7 @@
             <Setter Property="Opacity" Value="0.5" />
         </Style>
         <Style Selector="^.Clearable /template/ TextBox#PART_TextBox">
-            <Setter Property="shadui:TextBoxAssist.Clearable" Value="True" />
+            <Setter Property="leotiaui:TextBoxAssist.Clearable" Value="True" />
         </Style>
     </ControlTheme>
 </ResourceDictionary>

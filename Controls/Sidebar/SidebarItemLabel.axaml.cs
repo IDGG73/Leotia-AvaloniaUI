@@ -2,7 +2,7 @@
 using Avalonia.Controls.Primitives;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Represents a label item within a sidebar control.

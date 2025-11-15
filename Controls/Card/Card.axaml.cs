@@ -2,10 +2,10 @@
 using Avalonia.Controls;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
-///     Represents a card control with header, footer, and shadow properties.
+///     Represents a card control with header, footer, and leotiaow properties.
 /// </summary>
 public class Card : ContentControl
 {
@@ -46,7 +46,7 @@ public class Card : ContentControl
         AvaloniaProperty.Register<Card, bool>(nameof(HasShadow));
 
     /// <summary>
-    ///     Gets or sets a value indicating whether the card has a shadow.
+    ///     Gets or sets a value indicating whether the card has a leotiaow.
     /// </summary>
     public bool HasShadow
     {

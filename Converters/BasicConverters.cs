@@ -2,7 +2,7 @@
 using Avalonia.Controls.Primitives.Converters;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     Provides wrapper access to common Avalonia converters for use in XAML.

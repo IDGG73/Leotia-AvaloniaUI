@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI"
+    xmlns:leotiaui="clr-namespace:LeotiaUI"
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <Design.PreviewWith>
         <Border
@@ -18,8 +18,8 @@
                 </ComboBox>
                 <ComboBox
                     Width="200"
-                    shadui:ControlAssist.Hint="This control is currently disabled"
-                    shadui:ControlAssist.Label="Disabled Selection"
+                    leotiaui:ControlAssist.Hint="This control is currently disabled"
+                    leotiaui:ControlAssist.Label="Disabled Selection"
                     SelectedIndex="0">
                     <DataValidationErrors.Error>
                         <system:Exception />
@@ -44,7 +44,7 @@
         <Setter Property="Background" Value="{DynamicResource SelectionColor}" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="FontWeight" Value="Medium" />
-        <Setter Property="shadui:ControlAssist.MinHeight" Value="36" />
+        <Setter Property="leotiaui:ControlAssist.MinHeight" Value="36" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
         <Setter Property="ItemsPanel">
             <ItemsPanelTemplate>
@@ -59,9 +59,9 @@
                             Name="Label"
                             Margin="0,0,0,6"
                             Classes="Small"
-                            IsVisible="{TemplateBinding shadui:ControlAssist.Label,
+                            IsVisible="{TemplateBinding leotiaui:ControlAssist.Label,
                                                         Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                            Text="{TemplateBinding shadui:ControlAssist.Label}" />
+                            Text="{TemplateBinding leotiaui:ControlAssist.Label}" />
                         <Panel>
                             <Border
                                 Name="Background"
@@ -78,8 +78,8 @@
                             </Border>
                             <Border
                                 Name="Border"
-                                Height="{TemplateBinding shadui:ControlAssist.Height}"
-                                MinHeight="{TemplateBinding shadui:ControlAssist.MinHeight}"
+                                Height="{TemplateBinding leotiaui:ControlAssist.Height}"
+                                MinHeight="{TemplateBinding leotiaui:ControlAssist.MinHeight}"
                                 Padding="{TemplateBinding Padding}"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
@@ -114,7 +114,7 @@
                                         Margin="5,0,16,0"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
-                                        Data="{x:Static shadui:Icons.ChevronUpDown}"
+                                        Data="{x:Static leotiaui:Icons.ChevronUpDown}"
                                         Fill="{DynamicResource MutedColor}"
                                         Stretch="Uniform">
                                         <Path.Transitions>
@@ -159,9 +159,9 @@
                         <TextBlock
                             Name="PART_Hint"
                             Classes="Caption Muted"
-                            IsVisible="{TemplateBinding shadui:ControlAssist.Hint,
+                            IsVisible="{TemplateBinding leotiaui:ControlAssist.Hint,
                                                         Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                            Text="{TemplateBinding shadui:ControlAssist.Hint}" />
+                            Text="{TemplateBinding leotiaui:ControlAssist.Hint}" />
                     </StackPanel>
                 </DataValidationErrors>
             </ControlTemplate>

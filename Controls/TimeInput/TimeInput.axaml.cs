@@ -7,7 +7,7 @@ using Avalonia.Data;
 using Avalonia.Interactivity;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     A control that allows users to input and display time values in hours, minutes, and optionally seconds.

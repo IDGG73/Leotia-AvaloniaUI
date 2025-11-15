@@ -1,29 +1,29 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI">
+    xmlns:leotiaui="clr-namespace:LeotiaUI">
     <Design.PreviewWith>
         <StackPanel
             Margin="24"
             Orientation="Horizontal"
             Spacing="16">
-            <shadui:Skeleton
+            <leotiaui:Skeleton
                 Width="64"
                 Height="64"
                 CornerRadius="{DynamicResource FullCornerRadius}" />
             <StackPanel VerticalAlignment="Center" Spacing="8">
-                <shadui:Skeleton
+                <leotiaui:Skeleton
                     Width="255"
                     Height="28"
                     HorizontalAlignment="Left" />
-                <shadui:Skeleton
+                <leotiaui:Skeleton
                     Width="200"
                     Height="20"
                     HorizontalAlignment="Left" />
             </StackPanel>
         </StackPanel>
     </Design.PreviewWith>
-    <ControlTheme x:Key="{x:Type shadui:Skeleton}" TargetType="shadui:Skeleton">
+    <ControlTheme x:Key="{x:Type leotiaui:Skeleton}" TargetType="leotiaui:Skeleton">
         <Setter Property="Background" Value="{DynamicResource PrimaryColor10}" />
         <Setter Property="CornerRadius" Value="{DynamicResource LgCornerRadius}" />
         <Setter Property="Template">

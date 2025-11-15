@@ -9,7 +9,7 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 
 // ReSharper disable once CheckNamespace
-namespace ShadUI;
+namespace LeotiaUI;
 
 /// <summary>
 ///     A simple dropdown control that displays a list of items in a popup when triggered.

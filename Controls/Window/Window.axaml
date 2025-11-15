@@ -1,10 +1,10 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI">
+    xmlns:leotiaui="clr-namespace:LeotiaUI">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceInclude Source="avares://ShadUI/Controls/Constants.axaml" />
+        <ResourceInclude Source="avares://LeotiaUI/Controls/Constants.axaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <ControlTheme x:Key="WindowButtonStyle" TargetType="Button">
@@ -49,7 +49,7 @@
         </Style>
     </ControlTheme>
 
-    <ControlTheme x:Key="WindowTheme" TargetType="shadui:Window">
+    <ControlTheme x:Key="WindowTheme" TargetType="leotiaui:Window">
         <Setter Property="Margin" Value="0" />
         <Setter Property="Background" Value="{DynamicResource WindowBackgroundColor}" />
         <Setter Property="TransparencyLevelHint" Value="Transparent" />
@@ -74,7 +74,7 @@
                                               x:TypeArguments=CornerRadius}">
                     <VisualLayerManager IsHitTestVisible="True">
                         <VisualLayerManager.ChromeOverlayLayer>
-                            <ItemsControl ItemsSource="{CompiledBinding Hosts, RelativeSource={RelativeSource AncestorType={x:Type shadui:Window}}}">
+                            <ItemsControl ItemsSource="{CompiledBinding Hosts, RelativeSource={RelativeSource AncestorType={x:Type leotiaui:Window}}}">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
                                         <Panel />
@@ -86,10 +86,10 @@
                             <DockPanel LastChildFill="True">
                                 <Panel DockPanel.Dock="Top">
                                     <Panel.Styles>
-                                        <Style Selector="shadui|Window[ShowBottomBorder=True] /template/ Border#BottomBorder">
+                                        <Style Selector="leotiaui|Window[ShowBottomBorder=True] /template/ Border#BottomBorder">
                                             <Setter Property="BorderThickness" Value="0,0,0,1" />
                                         </Style>
-                                        <Style Selector="shadui|Window[ShowBottomBorder=False] /template/ Border#BottomBorder">
+                                        <Style Selector="leotiaui|Window[ShowBottomBorder=False] /template/ Border#BottomBorder">
                                             <Setter Property="BorderThickness" Value="0,0,0,0" />
                                         </Style>
                                     </Panel.Styles>
@@ -121,7 +121,7 @@
                                                                 IsEnabled="{TemplateBinding CanMinimize}"
                                                                 IsVisible="{TemplateBinding CanMinimize}"
                                                                 Theme="{StaticResource WindowButtonStyle}">
-                                                                <PathIcon Name="MinimizeIcon" Data="{x:Static shadui:Icons.WindowMinimize}" />
+                                                                <PathIcon Name="MinimizeIcon" Data="{x:Static leotiaui:Icons.WindowMinimize}" />
                                                             </Button>
                                                             <Button
                                                                 Name="PART_MaximizeButton"
@@ -130,13 +130,13 @@
                                                                 Theme="{StaticResource WindowButtonStyle}">
                                                                 <Button.IsEnabled>
                                                                     <MultiBinding Converter="{x:Static BoolConverters.And}">
-                                                                        <Binding Path="$parent[shadui:Window].CanResize" />
-                                                                        <Binding Path="$parent[shadui:Window].CanMaximize" />
+                                                                        <Binding Path="$parent[leotiaui:Window].CanResize" />
+                                                                        <Binding Path="$parent[leotiaui:Window].CanMaximize" />
                                                                     </MultiBinding>
                                                                 </Button.IsEnabled>
                                                                 <PathIcon
                                                                     Name="MaximizeIcon"
-                                                                    Data="{x:Static shadui:Icons.WindowMaximize}"
+                                                                    Data="{x:Static leotiaui:Icons.WindowMaximize}"
                                                                     IsHitTestVisible="False" />
                                                             </Button>
                                                             <Button
@@ -146,7 +146,7 @@
                                                                 Theme="{StaticResource WindowButtonStyle}">
                                                                 <PathIcon
                                                                     Name="CloseIcon"
-                                                                    Data="{x:Static shadui:Icons.WindowClose}"
+                                                                    Data="{x:Static leotiaui:Icons.WindowClose}"
                                                                     Foreground="{CompiledBinding Foreground,
                                                                                                  ElementName=PART_CloseButton}" />
                                                             </Button>
@@ -202,10 +202,10 @@
             <Setter Property="Margin" Value="10,0,0,7" />
         </Style>
         <Style Selector="^[WindowState=Maximized] /template/ PathIcon#MaximizeIcon">
-            <Setter Property="Data" Value="{x:Static shadui:Icons.WindowRestore}" />
+            <Setter Property="Data" Value="{x:Static leotiaui:Icons.WindowRestore}" />
         </Style>
         <Style Selector="^[WindowState=Normal] /template/ PathIcon#MaximizeIcon">
-            <Setter Property="Data" Value="{x:Static shadui:Icons.WindowMaximize}" />
+            <Setter Property="Data" Value="{x:Static leotiaui:Icons.WindowMaximize}" />
         </Style>
         <Style Selector="^[IsTitleBarVisible=True]">
             <Style Selector="^[TitleBarAnimationEnabled=True]">
@@ -307,7 +307,7 @@
         </Style>
     </ControlTheme>
     <ControlTheme
-        x:Key="{x:Type shadui:Window}"
+        x:Key="{x:Type leotiaui:Window}"
         BasedOn="{StaticResource WindowTheme}"
-        TargetType="shadui:Window" />
+        TargetType="leotiaui:Window" />
 </ResourceDictionary>

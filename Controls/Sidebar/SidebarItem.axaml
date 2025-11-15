@@ -1,16 +1,16 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shadui="clr-namespace:ShadUI"
+    xmlns:leotiaui="clr-namespace:LeotiaUI"
     xmlns:system="clr-namespace:System;assembly=netstandard">
-    <ControlTheme x:Key="{x:Type shadui:SidebarItem}" TargetType="{x:Type shadui:SidebarItem}">
+    <ControlTheme x:Key="{x:Type leotiaui:SidebarItem}" TargetType="{x:Type leotiaui:SidebarItem}">
         <Setter Property="FontSize" Value="14" />
         <Setter Property="FontWeight" Value="Medium" />
-        <Setter Property="SharedSizeGroup" Value="{Binding $parent[shadui:Sidebar].DefaultItemsSharedSizeGroup}" />
-        <Setter Property="GroupName" Value="{Binding $parent[shadui:Sidebar].DefaultItemsGroup}" />
-        <Setter Property="Expanded" Value="{Binding $parent[shadui:Sidebar].Expanded}" />
-        <Setter Property="Spacing" Value="{Binding $parent[shadui:Sidebar].ItemIconContentSpacing}" />
-        <Setter Property="ParentRoute" Value="{Binding $parent[shadui:Sidebar].CurrentRoute}" />
+        <Setter Property="SharedSizeGroup" Value="{Binding $parent[leotiaui:Sidebar].DefaultItemsSharedSizeGroup}" />
+        <Setter Property="GroupName" Value="{Binding $parent[leotiaui:Sidebar].DefaultItemsGroup}" />
+        <Setter Property="Expanded" Value="{Binding $parent[leotiaui:Sidebar].Expanded}" />
+        <Setter Property="Spacing" Value="{Binding $parent[leotiaui:Sidebar].ItemIconContentSpacing}" />
+        <Setter Property="ParentRoute" Value="{Binding $parent[leotiaui:Sidebar].CurrentRoute}" />
         <Setter Property="TextBlock.TextTrimming" Value="CharacterEllipsis" />
         <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
         <Setter Property="TextBlock.MaxLines" Value="2" />
