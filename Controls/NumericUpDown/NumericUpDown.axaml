@@ -7,9 +7,9 @@
     </ResourceDictionary.MergedDictionaries>
     <ControlTheme x:Key="InnerTextBoxTheme" TargetType="TextBox">
         <Setter Property="FontSize" Value="14" />
-        <Setter Property="LineHeight" Value="20" />
+        <Setter Property="LineHeight" Value="{StaticResource PresenterLineHeight}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="CornerRadius" Value="{DynamicResource LgCornerRadius}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource FieldCornerRadius}" />
         <Setter Property="SelectionBrush" Value="{DynamicResource PrimaryColor}" />
         <Setter Property="SelectionForegroundBrush" Value="{DynamicResource PrimaryForegroundColor}" />
         <Setter Property="CaretBrush" Value="{DynamicResource ForegroundColor}" />
@@ -73,8 +73,7 @@
                                 SelectionEnd="{TemplateBinding SelectionEnd}"
                                 SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
                                 SelectionStart="{TemplateBinding SelectionStart}"
-                                Text="{TemplateBinding Text,
-                                                       Mode=TwoWay}"
+                                Text="{TemplateBinding Text, Mode=TwoWay}"
                                 TextAlignment="{TemplateBinding TextAlignment}"
                                 TextWrapping="{TemplateBinding TextWrapping}" />
                         </Panel>
@@ -118,72 +117,80 @@
         </Style>
     </ControlTheme>
     <ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown">
-        <Setter Property="Background" Value="{DynamicResource SelectionColor}" />
+        <Setter Property="Background" Value="{DynamicResource FieldColor}" />
         <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}" />
-        <Setter Property="CornerRadius" Value="{DynamicResource LgCornerRadius}" />
-
+        <Setter Property="CornerRadius" Value="{DynamicResource FieldCornerRadius}" />
+        <Setter Property="FormatString" Value="0.#####"/>
         <!--  setting this to prevent focus issues with the TextBox inside ButtonSpinner  -->
         <Setter Property="leotiaui:ElementAssist.AttachFocus" Value="TextBox" />
 
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="Padding" Value="12,7" />
+        <Setter Property="Padding" Value="5,0" />
         <Setter Property="Template">
             <ControlTemplate>
-                <StackPanel Background="Transparent" Focusable="False">
+                <Grid IsVisible="True" Background="Transparent" Focusable="False">
+                    <Grid.ColumnDefinitions>
+					    <ColumnDefinition Width="{Binding #Label.IsVisible, Converter={x:Static leotiaui:BooleanConverters.LabelColumnWidth}}"/>
+                        <ColumnDefinition Width="{Binding #Label.IsVisible, Converter={x:Static leotiaui:BooleanConverters.FieldColumnWidth}}"/>
+                    </Grid.ColumnDefinitions>
+
                     <TextBlock
                         Name="Label"
-                        Margin="0,0,0,6"
-                        Classes="Small"
-                        IsVisible="{TemplateBinding leotiaui:ControlAssist.Label,
-                                                    Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+                        Margin="0,0,5,0"
+                        Foreground="{DynamicResource LabelColor}"
+                        Grid.Column="0"
+                        IsVisible="{TemplateBinding leotiaui:ControlAssist.Label, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
                         Text="{TemplateBinding leotiaui:ControlAssist.Label}" />
-                    <DataValidationErrors>
+                    <DataValidationErrors Grid.Column="1">
                         <StackPanel>
-                            <ButtonSpinner
-                                Name="PART_Spinner"
-                                HorizontalContentAlignment="Stretch"
-                                VerticalContentAlignment="Stretch"
-                                AllowSpin="{TemplateBinding AllowSpin}"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}"
-                                CornerRadius="{TemplateBinding CornerRadius}"
-                                DataValidationErrors.Errors="{TemplateBinding DataValidationErrors.Errors}"
-                                IsTabStop="False"
-                                ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}">
-                                <TextBox
-                                    Name="PART_TextBox"
-                                    MinWidth="20"
-                                    Padding="{TemplateBinding Padding}"
-                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                    AcceptsReturn="False"
-                                    BorderThickness="0"
-                                    InnerLeftContent="{Binding InnerLeftContent, RelativeSource={RelativeSource TemplatedParent}}"
-                                    InnerRightContent="{Binding InnerRightContent, RelativeSource={RelativeSource TemplatedParent}}"
-                                    IsReadOnly="{TemplateBinding IsReadOnly}"
-                                    ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                                    Text="{TemplateBinding Text}"
-                                    TextAlignment="{TemplateBinding TextAlignment}"
-                                    TextWrapping="NoWrap"
-                                    Theme="{StaticResource InnerTextBoxTheme}"
-                                    Watermark="{TemplateBinding Watermark}" />
-                            </ButtonSpinner>
+                            <Grid ColumnDefinitions="Auto,*">
+                                <ContentPresenter Grid.Column="0" Content="{TemplateBinding InnerLeftContent}"/>
+							    <ButtonSpinner
+                                    Name="PART_Spinner"
+                                    Grid.Column="1"
+                                    HorizontalContentAlignment="Stretch"
+                                    VerticalContentAlignment="Stretch"
+                                    Height="{StaticResource SingleLineHeight}"
+                                    AllowSpin="{TemplateBinding AllowSpin}"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}"
+                                    CornerRadius="{TemplateBinding CornerRadius}"
+                                    DataValidationErrors.Errors="{TemplateBinding DataValidationErrors.Errors}"
+                                    IsTabStop="False"
+                                    ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}">
+                                    <TextBox
+                                        Name="PART_TextBox"
+                                        MinWidth="20"
+                                        Padding="{TemplateBinding Padding}"
+                                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        AcceptsReturn="False"
+                                        BorderThickness="0"
+                                        InnerRightContent="{Binding InnerRightContent, RelativeSource={RelativeSource TemplatedParent}}"
+                                        IsReadOnly="{TemplateBinding IsReadOnly}"
+                                        ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                        Text="{TemplateBinding Text}"
+                                        TextAlignment="Center"
+                                        TextWrapping="NoWrap"
+                                        Theme="{StaticResource InnerTextBoxTheme}"
+                                        Watermark="{TemplateBinding Watermark}" />
+                                </ButtonSpinner>	
+                            </Grid>
                             <TextBlock
                                 Margin="0,4,0,0"
                                 Classes="Caption Muted"
                                 Cursor="Arrow"
-                                IsVisible="{TemplateBinding leotiaui:ControlAssist.Hint,
-                                                            Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+                                IsVisible="{TemplateBinding leotiaui:ControlAssist.Hint, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
                                 Text="{TemplateBinding leotiaui:ControlAssist.Hint}" />
                         </StackPanel>
                     </DataValidationErrors>
-                </StackPanel>
+                </Grid>
             </ControlTemplate>
         </Setter>
         <Style Selector="^[Tag=active]:not(:error) /template/ ButtonSpinner#PART_Spinner">
-            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentColor}" />
         </Style>
         <Style Selector="^:error">
             <Style Selector="^/template/ TextBlock#Label">

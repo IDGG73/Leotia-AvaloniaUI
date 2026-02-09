@@ -56,20 +56,22 @@
 
     <ControlTheme x:Key="{x:Type TabItem}" TargetType="TabItem">
         <Setter Property="Background" Value="{DynamicResource TabItemsBackgroundColor}" />
-        <Setter Property="FontSize" Value="14" />
+        <Setter Property="MinHeight" Value="{DynamicResource SingleLineHeight}" />
+        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
         <Setter Property="FontWeight" Value="Medium" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
         <Setter Property="CornerRadius" Value="{DynamicResource MdCornerRadius}" />
         <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="Padding" Value="16,4" />
+        <Setter Property="Padding" Value="1" />
         <Setter Property="Template">
             <ControlTemplate>
                 <Panel>
                     <Border
                         x:Name="SelectedBorder"
-                        Margin="2,0,2,4"
+                        BorderThickness="{TemplateBinding BorderThickness}"
                         Background="{DynamicResource TabItemSelectedColor}"
                         BoxShadow="{DynamicResource Shadow}"
                         CornerRadius="{TemplateBinding CornerRadius}"
@@ -79,9 +81,19 @@
                                 <DoubleTransition Property="Opacity" Duration="0:0:0.20" />
                             </Transitions>
                         </Border.Transitions>
+
+                        <Border.BorderBrush>
+							<LinearGradientBrush>
+			    <GradientStop Color="{DynamicResource AResourceThatDoesNotExists}" Offset="0.0"/>
+                <GradientStop Color="{DynamicResource PrimaryColor}" Offset="0.4"/>
+                <GradientStop Color="{DynamicResource PrimaryColor}" Offset="0.6"/>
+                <GradientStop Color="{DynamicResource AResourceThatDoesNotExists}" Offset="1.0"/>
+            </LinearGradientBrush>
+                        </Border.BorderBrush>
+
                     </Border>
                     <Border
-                        Margin="2,0,2,4"
+                        Margin="5,0"
                         ClipToBounds="True"
                         CornerRadius="{TemplateBinding CornerRadius}">
                         <ContentPresenter
@@ -89,8 +101,6 @@
                             Padding="{TemplateBinding Padding}"
                             HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
                             Content="{TemplateBinding Header}"
                             ContentTemplate="{TemplateBinding HeaderTemplate}"
                             Foreground="{TemplateBinding Foreground}"
@@ -128,5 +138,12 @@
         <Style Selector="^[TabStripPlacement=Right]">
             <Setter Property="HorizontalContentAlignment" Value="Right" />
         </Style>
+
+        <!--  Editor  -->
+        <Style Selector="^.Dockable">
+            <Setter Property="CornerRadius" Value="{DynamicResource DockTabCornerRadius}" />
+            <Setter Property="BorderThickness" Value="0,1,0,0" />
+        </Style>
+
     </ControlTheme>
 </ResourceDictionary>

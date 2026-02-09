@@ -30,133 +30,111 @@
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Template">
             <ControlTemplate>
-                <ReversibleStackPanel
+                <Grid
                     Name="PART_Container"
-                    Orientation="Horizontal"
-                    ReverseOrder="{TemplateBinding leotiaui:ToggleSwitchAssist.RightAlignedContent}"
-                    Spacing="8">
-                    <Panel>
-                        <ContentPresenter
-                            x:Name="PART_OffContentPresenter"
-                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                            Content="{TemplateBinding OffContent}"
-                            ContentTemplate="{TemplateBinding OffContentTemplate}" />
-                        <ContentPresenter
-                            x:Name="PART_OnContentPresenter"
-                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                            Content="{TemplateBinding OnContent}"
-                            ContentTemplate="{TemplateBinding OnContentTemplate}" />
-                    </Panel>
-                    <Grid
-                        Name="PART_ToggleContainer"
-                        Background="Transparent"
-                        RowDefinitions="Auto,*">
-                        <ContentPresenter
+                    ColumnDefinitions="30*,70*">
+                    <ContentPresenter
                             x:Name="PART_ContentPresenter"
-                            Grid.Row="0"
+                            Grid.Column="0"
                             VerticalAlignment="Top"
                             Content="{TemplateBinding Content}"
                             ContentTemplate="{TemplateBinding ContentTemplate}"
-                            RecognizesAccessKey="True" />
-                        <Grid
+                            FontSize="{DynamicResource DefaultFontSize}"/>
+                    <Grid
+                        Grid.Column="1"
+                        VerticalAlignment="Top"
+                        RowDefinitions="6,Auto,6">
+                        <Border
                             Grid.Row="1"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            RowDefinitions="6,Auto,6">
+                            Grid.Column="0"
+                            Width="32"
+                            Height="18"
+                            Background="{DynamicResource SwitchBackgroundColor}"
+                            BorderThickness="0"
+                            CornerRadius="{DynamicResource FullCornerRadius}" />
+                        <Border
+                            x:Name="SwitchBackground"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Width="32"
+                            Height="18"
+                            Background="{DynamicResource PrimaryColor}"
+                            BorderThickness="0"
+                            ClipToBounds="True"
+                            CornerRadius="{DynamicResource FullCornerRadius}"
+                            Opacity="0">
+                            <Border.Transitions>
+                                <Transitions>
+                                    <DoubleTransition Property="Opacity" Duration="0:0:0.2" />
+                                </Transitions>
+                            </Border.Transitions>
+                        </Border>
+                        <Canvas
+                            x:Name="PART_SwitchKnob"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Width="16"
+                            Height="16"
+                            HorizontalAlignment="Left">
                             <Border
-                                Grid.Row="1"
-                                Grid.Column="0"
-                                Width="32"
-                                Height="18"
-                                Background="{DynamicResource SwitchBackgroundColor}"
-                                BorderThickness="0"
-                                CornerRadius="{DynamicResource FullCornerRadius}" />
-                            <Border
-                                x:Name="SwitchBackground"
-                                Grid.Row="1"
-                                Grid.Column="0"
-                                Width="32"
-                                Height="18"
-                                Background="{DynamicResource PrimaryColor}"
-                                BorderThickness="0"
-                                ClipToBounds="True"
-                                CornerRadius="{DynamicResource FullCornerRadius}"
-                                Opacity="0">
-                                <Border.Transitions>
-                                    <Transitions>
-                                        <DoubleTransition Property="Opacity" Duration="0:0:0.2" />
-                                    </Transitions>
-                                </Border.Transitions>
-                            </Border>
-                            <Canvas
-                                x:Name="PART_SwitchKnob"
-                                Grid.Row="1"
-                                Grid.Column="0"
+                                x:Name="SwitchKnob"
+                                Canvas.Left="0"
+                                Canvas.Top="0"
                                 Width="16"
                                 Height="16"
-                                HorizontalAlignment="Left">
-                                <Border
-                                    x:Name="SwitchKnob"
-                                    Canvas.Left="0"
-                                    Canvas.Top="0"
-                                    Width="16"
-                                    Height="16"
-                                    Margin="0,0,0,0"
-                                    ClipToBounds="True"
-                                    CornerRadius="{DynamicResource FullCornerRadius}">
-                                    <Border.Transitions>
-                                        <Transitions>
-                                            <DoubleTransition Property="Width" Duration="0:0:0.05">
-                                                <DoubleTransition.Easing>
-                                                    <QuadraticEaseOut />
-                                                </DoubleTransition.Easing>
-                                            </DoubleTransition>
-                                            <DoubleTransition Property="Canvas.Left" Duration="0:0:0.15">
-                                                <DoubleTransition.Easing>
-                                                    <QuarticEaseOut />
-                                                </DoubleTransition.Easing>
-                                            </DoubleTransition>
-                                        </Transitions>
-                                    </Border.Transitions>
-                                    <Panel>
-                                        <Border
-                                            Name="KnobOff"
-                                            Background="{DynamicResource SwitchForegroundColor}"
-                                            Opacity="1">
-                                            <Border.Transitions>
-                                                <Transitions>
-                                                    <DoubleTransition Property="Opacity" Duration="0:0:0.05">
-                                                        <DoubleTransition.Easing>
-                                                            <QuadraticEaseOut />
-                                                        </DoubleTransition.Easing>
-                                                    </DoubleTransition>
-                                                </Transitions>
-                                            </Border.Transitions>
-                                        </Border>
-                                        <Border
-                                            Name="KnobOn"
-                                            Background="{DynamicResource PrimaryForegroundColor}"
-                                            Opacity="0">
-                                            <Border.Transitions>
-                                                <Transitions>
-                                                    <DoubleTransition Property="Opacity" Duration="0:0:0.05">
-                                                        <DoubleTransition.Easing>
-                                                            <QuadraticEaseOut />
-                                                        </DoubleTransition.Easing>
-                                                    </DoubleTransition>
-                                                </Transitions>
-                                            </Border.Transitions>
-                                        </Border>
-                                    </Panel>
-                                </Border>
-                                <Grid x:Name="PART_MovingKnobs" />
-                                <!--  to enable toggle animation  -->
-                            </Canvas>
-                        </Grid>
+                                Margin="0,0,0,0"
+                                ClipToBounds="True"
+                                CornerRadius="{DynamicResource FullCornerRadius}">
+                                <Border.Transitions>
+                                    <Transitions>
+                                        <DoubleTransition Property="Width" Duration="0:0:0.05">
+                                            <DoubleTransition.Easing>
+                                                <QuadraticEaseOut />
+                                            </DoubleTransition.Easing>
+                                        </DoubleTransition>
+                                        <DoubleTransition Property="Canvas.Left" Duration="0:0:0.15">
+                                            <DoubleTransition.Easing>
+                                                <QuarticEaseOut />
+                                            </DoubleTransition.Easing>
+                                        </DoubleTransition>
+                                    </Transitions>
+                                </Border.Transitions>
+                                <Panel>
+                                    <Border
+                                        Name="KnobOff"
+                                        Background="{DynamicResource SwitchForegroundColor}"
+                                        Opacity="1">
+                                        <Border.Transitions>
+                                            <Transitions>
+                                                <DoubleTransition Property="Opacity" Duration="0:0:0.05">
+                                                    <DoubleTransition.Easing>
+                                                        <QuadraticEaseOut />
+                                                    </DoubleTransition.Easing>
+                                                </DoubleTransition>
+                                            </Transitions>
+                                        </Border.Transitions>
+                                    </Border>
+                                    <Border
+                                        Name="KnobOn"
+                                        Background="{DynamicResource PrimaryForegroundColor}"
+                                        Opacity="0">
+                                        <Border.Transitions>
+                                            <Transitions>
+                                                <DoubleTransition Property="Opacity" Duration="0:0:0.05">
+                                                    <DoubleTransition.Easing>
+                                                        <QuadraticEaseOut />
+                                                    </DoubleTransition.Easing>
+                                                </DoubleTransition>
+                                            </Transitions>
+                                        </Border.Transitions>
+                                    </Border>
+                                </Panel>
+                            </Border>
+                            <Grid x:Name="PART_MovingKnobs" />
+                            <!--  to enable toggle animation  -->
+                        </Canvas>
                     </Grid>
-                </ReversibleStackPanel>
+                </Grid>
             </ControlTemplate>
         </Setter>
         <Style Selector="^[IsEnabled=False] /template/ ReversibleStackPanel#PART_Container">

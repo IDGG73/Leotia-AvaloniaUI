@@ -24,6 +24,24 @@ namespace LeotiaUI;
 public class Window : Avalonia.Controls.Window
 {
     /// <summary>
+    /// Identifies the SecondaryTitle styled property, which allows setting an additional title for a window.
+    /// </summary>
+    /// <remarks>This property can be used to display supplementary information in the window's title bar,
+    /// such as a subtitle or context. The value is typically shown alongside the main window title, depending on the
+    /// window's template and platform support.</remarks>
+    public static readonly StyledProperty<string> SecondaryTitleProperty =
+        AvaloniaProperty.Register<Window, string>(nameof(SecondaryTitle));
+
+    /// <summary>
+    /// Gets or sets the secondary title displayed alongside the main title.
+    /// </summary>
+    public string SecondaryTitle
+    {
+        get => GetValue(SecondaryTitleProperty);
+        set => SetValue(SecondaryTitleProperty, value);
+    }
+
+    /// <summary>
     ///     The style key of the window.
     /// </summary>
     protected override Type StyleKeyOverride => typeof(Window);

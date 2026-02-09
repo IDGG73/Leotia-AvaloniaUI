@@ -5,7 +5,7 @@
     <ControlTheme x:Key="SpinnerRepeatButton" TargetType="RepeatButton">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="Padding" Value="5" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <ControlTemplate>
@@ -64,7 +64,7 @@
         </Style>
     </ControlTheme>
     <ControlTheme x:Key="{x:Type ButtonSpinner}" TargetType="ButtonSpinner">
-        <Setter Property="Background" Value="{DynamicResource SelectionColor}" />
+        <Setter Property="Background" Value="{DynamicResource FieldColor}" />
         <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
@@ -85,57 +85,40 @@
                         CornerRadius="{TemplateBinding CornerRadius}">
                         <Border ClipToBounds="True" CornerRadius="{TemplateBinding CornerRadius}">
                             <DockPanel>
-                                <StackPanel
-                                    Name="SpinnerPanel"
-                                    DockPanel.Dock="Right"
-                                    IsVisible="{TemplateBinding ShowButtonSpinner}"
-                                    Orientation="Horizontal"
-                                    TabIndex="2">
-                                    <Rectangle
-                                        Name="LeftBorder"
-                                        Width="1"
-                                        HorizontalAlignment="Center"
-                                        Fill="{DynamicResource BorderColor}" />
-                                    <RepeatButton
-                                        Name="PART_IncreaseButton"
-                                        IsTabStop="{TemplateBinding IsTabStop}"
-                                        Theme="{StaticResource SpinnerRepeatButton}">
-                                        <Path
-                                            Width="12"
-                                            Height="8"
-                                            HorizontalAlignment="Center"
-                                            VerticalAlignment="Center"
-                                            Data="{x:Static leotiaui:Icons.ChevronUp}"
-                                            Fill="{TemplateBinding Foreground}"
-                                            Stretch="Uniform" />
-                                    </RepeatButton>
-                                    <Rectangle
-                                        Width="1"
-                                        HorizontalAlignment="Center"
-                                        Fill="{DynamicResource BorderColor}" />
-                                    <RepeatButton
+                                <RepeatButton
                                         Name="PART_DecreaseButton"
                                         IsTabStop="{TemplateBinding IsTabStop}"
-                                        Theme="{StaticResource SpinnerRepeatButton}">
+                                        Theme="{StaticResource SpinnerRepeatButton}"
+                                        Padding="3,0,0,0"
+                                        DockPanel.Dock="Left">
                                         <Path
-                                            Width="12"
+                                            Width="8"
                                             Height="8"
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"
-                                            Data="{x:Static leotiaui:Icons.ChevronDown}"
+                                            Data="{x:Static leotiaui:Icons.ChevronLeft}"
+                                            Fill="{TemplateBinding Foreground}"
+                                            Stretch="Uniform" />
+                                </RepeatButton>
+                                <RepeatButton
+                                        Name="PART_IncreaseButton"
+                                        IsTabStop="{TemplateBinding IsTabStop}"
+                                        Theme="{StaticResource SpinnerRepeatButton}"
+                                        Padding="0,0,0,0"
+                                        DockPanel.Dock="Right">
+                                        <Path
+                                            Width="8"
+                                            Height="8"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Data="{x:Static leotiaui:Icons.ChevronRight}"
                                             Fill="{TemplateBinding Foreground}"
                                             Stretch="Uniform" />
                                     </RepeatButton>
-                                    <Rectangle
-                                        Name="RightBorder"
-                                        Width="1"
-                                        HorizontalAlignment="Center"
-                                        Fill="{DynamicResource BorderColor}" />
-                                </StackPanel>
                                 <ContentPresenter
                                     Name="ContentPresenter"
                                     Padding="{TemplateBinding Padding}"
-                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    HorizontalContentAlignment="Stretch"
                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                     Content="{TemplateBinding Content}"
                                     ContentTemplate="{TemplateBinding ContentTemplate}"
@@ -176,7 +159,7 @@
                     </Transitions>
                 </Setter.Value>
             </Setter>
-            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentColor}" />
         </Style>
         <Style Selector="^:not(:error):focus /template/ Border#border">
             <Setter Property="Transitions">
@@ -186,7 +169,7 @@
                     </Transitions>
                 </Setter.Value>
             </Setter>
-            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentColor}" />
         </Style>
         <Style Selector="^:error /template/ Border#border">
             <Setter Property="Transitions" Value="{x:Null}" />

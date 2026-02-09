@@ -68,4 +68,16 @@ public static class BooleanConverters
             var paramValue = double.TryParse(param, out var parsedValue) ? parsedValue : 0;
             return value ? 0 : paramValue;
         });
+
+    public static readonly IValueConverter LabelColumnWidth =
+        new FuncValueConverter<bool, GridLength>(isVisible =>
+        isVisible ? new GridLength(30, GridUnitType.Star)
+                  : new GridLength(0, GridUnitType.Star)
+        );
+
+    public static readonly IValueConverter FieldColumnWidth =
+        new FuncValueConverter<bool, GridLength>(isVisible =>
+            isVisible ? new GridLength(70, GridUnitType.Star)
+                      : new GridLength(100, GridUnitType.Star)
+        );
 }

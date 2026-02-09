@@ -1,0 +1,51 @@
+﻿<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:leotiaui="clr-namespace:LeotiaUI">
+    <ControlTheme x:Key="SplitButtonStyle" TargetType="SplitButton">
+        <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <Button
+                        Name="PART_PrimaryButton"
+                        Grid.Column="0"
+                        Margin="0,0,23,0"
+                        CornerRadius="6,0,0,6">
+
+                        <ContentPresenter
+                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    Content="{TemplateBinding Content}"
+                                    FontSize="{TemplateBinding FontSize}"
+                                    FontWeight="Normal"
+                                    RecognizesAccessKey="True" />
+
+                    </Button>
+
+                    <Button
+                        Name="PART_SecondaryButton"
+                        Grid.Column="1"
+                        Width="24"
+                        HorizontalAlignment="Right"
+                        CornerRadius="0,6,6,0"
+                        Padding="0,2,5,0">
+						<Path
+                            Width="8"
+                            Height="8"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Data="{x:Static leotiaui:Icons.ChevronDown}"
+                            Fill="{TemplateBinding Foreground}"
+                            Stretch="Uniform" />
+                    </Button>
+
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+    <ControlTheme
+        x:Key="{x:Type SplitButton}"
+        BasedOn="{StaticResource SplitButtonStyle}"
+        TargetType="SplitButton" />
+</ResourceDictionary>

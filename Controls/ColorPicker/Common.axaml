@@ -29,10 +29,10 @@
     </VisualBrush>
 
     <ControlTheme x:Key="ColorViewColorModelRadioButtonTheme" TargetType="RadioButton">
-        <Setter Property="MinHeight" Value="36" />
-        <Setter Property="MinWidth" Value="80" />
-        <Setter Property="FontSize" Value="14" />
-        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="MinHeight" Value="{DynamicResource SingleLineHeight}" />
+        <Setter Property="MinWidth" Value="56" />
+        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
+        <Setter Property="Padding" Value="{DynamicResource SmPadding}" />
         <Setter Property="Background" Value="{DynamicResource GhostColor}" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -71,7 +71,7 @@
                     </Border>
                     <Border
                         Name="SelectBackground"
-                        Background="{DynamicResource PrimaryColor}"
+                        Background="{DynamicResource AccentColor}"
                         CornerRadius="{TemplateBinding CornerRadius}"
                         Opacity="0">
                         <Border.Transitions>
@@ -104,6 +104,7 @@
 
         <Style Selector="^:checked">
             <Setter Property="Foreground" Value="{DynamicResource PrimaryForegroundColor}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
         </Style>
         <Style Selector="^:checked /template/ Border#BaseBackground">
             <Setter Property="Opacity" Value="0" />

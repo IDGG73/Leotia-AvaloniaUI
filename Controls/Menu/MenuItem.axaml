@@ -6,11 +6,12 @@
     xmlns:system="clr-namespace:System;assembly=netstandard">
     <converters:PlatformKeyGestureConverter x:Key="KeyGestureConverter" />
     <ControlTheme x:Key="{x:Type MenuItem}" TargetType="MenuItem">
-        <Setter Property="Background" Value="{DynamicResource BackgroundColor}" />
+        <Setter Property="Background" Value="{DynamicResource ModalBackgroundColor}" />
         <Setter Property="CornerRadius" Value="{DynamicResource MdCornerRadius}" />
         <Setter Property="BorderThickness" Value="1.5" />
+        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}"/>
         <Setter Property="Margin" Value="4,2" />
-        <Setter Property="Padding" Value="{DynamicResource DefaultPadding}" />
+        <Setter Property="Padding" Value="{DynamicResource MdPadding}" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
         <Setter Property="leotiaui:MenuItemAssist.Label" Value="{x:Null}" />
         <Setter Property="Transitions">
@@ -62,9 +63,9 @@
                                 </Grid.ColumnDefinitions>
                                 <ContentPresenter
                                     Name="Icon"
-									Width="6"
-                                    Height="6"
-                                    Margin="0,0,4,0"
+									Width="{DynamicResource DefaultFontSize}"
+                                    Height="{DynamicResource DefaultFontSize}"
+                                    Margin="0,0,10,0"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                     Content="{TemplateBinding Icon}"
@@ -75,12 +76,13 @@
                                     Grid.Column="1"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
+                                    FontSize="{TemplateBinding FontSize}"
                                     Content="{TemplateBinding Header}">
                                     <ContentPresenter.DataTemplates>
                                         <DataTemplate DataType="system:String">
                                             <TextBlock
-                                                FontSize="{DynamicResource DefaultFontSize}"
-                                                FontWeight="Normal"
+                                                FontSize="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                                FontWeight="Regular"
                                                 Text="{CompiledBinding}" />
                                         </DataTemplate>
                                     </ContentPresenter.DataTemplates>
@@ -101,7 +103,7 @@
                                     Grid.Column="3"
                                     Margin="8,0,0,0"
                                     VerticalAlignment="Center"
-                                    FontSize="{DynamicResource DefaultFontSize}"
+                                    FontSize="{TemplateBinding FontSize}"
                                     IsVisible="{TemplateBinding InputGesture,
                                                                 Converter={x:Static ObjectConverters.IsNotNull}}"
                                     Opacity="0.5"
@@ -121,7 +123,7 @@
                             <LayoutTransformControl Name="LayoutTransform" RenderTransformOrigin="0%, 0%">
                                 <Border
                                     Margin="24,0,2,4"
-                                    Background="{DynamicResource CardBackgroundColor}"
+                                    Background="{DynamicResource ModalBackgroundColor}"
                                     BorderBrush="{DynamicResource BorderColor}"
                                     BorderThickness="1"
                                     BoxShadow="{DynamicResource Shadow}"

@@ -25,67 +25,64 @@
         </Border>
     </Design.PreviewWith>
     <ControlTheme x:Key="{x:Type leotiaui:DateInput}" TargetType="{x:Type leotiaui:DateInput}">
-        <Setter Property="Padding" Value="4" />
-        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
         <Setter Property="Background" Value="{DynamicResource SelectionColor}" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-        <Setter Property="CornerRadius" Value="{DynamicResource LgCornerRadius}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource FieldCornerRadius}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}" />
         <Setter Property="leotiaui:ElementAssist.FocusOnLoad" Value="False" />
         <Setter Property="Template">
             <ControlTemplate>
-                <StackPanel Background="Transparent" Focusable="False">
+                <Grid Focusable="False" ColumnDefinitions="30*,70*">
                     <TextBlock
                         Name="Label"
-                        Margin="0,0,0,6"
+                        Margin="0,0,5,0"
                         Classes="Small"
+                        Grid.Column="0"
                         IsVisible="{TemplateBinding leotiaui:ControlAssist.Label,
                                                     Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
                         Text="{TemplateBinding leotiaui:ControlAssist.Label}" />
-                    <DataValidationErrors Focusable="False">
+                    <DataValidationErrors Focusable="False" Grid.Column="1">
                         <StackPanel>
                             <Border
                                 Name="Container"
                                 Padding="{TemplateBinding Padding}"
-                                HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-                                VerticalAlignment="{TemplateBinding VerticalAlignment}"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="{TemplateBinding CornerRadius}">
                                 <Grid ColumnDefinitions="* Auto * Auto *">
                                     <TextBox
-                                        Name="PART_MonthTextBox"
+                                        Name="PART_DayTextBox"
                                         Grid.Column="0"
-                                        leotiaui:ElementAssist.FocusOnLoad="{TemplateBinding leotiaui:ElementAssist.FocusOnLoad}"
                                         Background="Transparent"
                                         Cursor="IBeam"
                                         MaxLength="2"
-                                        Text="{TemplateBinding MonthString,
-                                                               Mode=TwoWay}"
+                                        Text="{TemplateBinding DayString, Mode=TwoWay}"
                                         Theme="{StaticResource InputBoxTheme}"
-                                        Watermark="mm" />
+                                        Watermark="DD" />
                                     <TextBlock
                                         Grid.Column="1"
-                                        Margin="8,0,8,2"
+                                        Margin="0"
                                         VerticalAlignment="Center"
                                         FontSize="18">
                                         /
                                     </TextBlock>
                                     <TextBox
-                                        Name="PART_DayTextBox"
+                                        Name="PART_MonthTextBox"
                                         Grid.Column="2"
+                                        leotiaui:ElementAssist.FocusOnLoad="{TemplateBinding leotiaui:ElementAssist.FocusOnLoad}"
                                         Background="Transparent"
                                         Cursor="IBeam"
                                         MaxLength="2"
-                                        Text="{TemplateBinding DayString,
-                                                               Mode=TwoWay}"
+                                        Text="{TemplateBinding MonthString, Mode=TwoWay}"
                                         Theme="{StaticResource InputBoxTheme}"
-                                        Watermark="dd" />
+                                        Watermark="MM" />
                                     <TextBlock
                                         Grid.Column="3"
-                                        Margin="8,0,8,2"
+                                        Margin="0"
                                         VerticalAlignment="Center"
                                         FontSize="18">
                                         /
@@ -96,22 +93,20 @@
                                         Background="Transparent"
                                         Cursor="IBeam"
                                         MaxLength="4"
-                                        Text="{TemplateBinding YearString,
-                                                               Mode=TwoWay}"
+                                        Text="{TemplateBinding YearString, Mode=TwoWay}"
                                         Theme="{StaticResource InputBoxTheme}"
-                                        Watermark="yyyy" />
+                                        Watermark="YYYY" />
                                 </Grid>
                             </Border>
                             <TextBlock
                                 Name="PART_Hint"
                                 Margin="0,4,0,0"
                                 Classes="Caption Muted"
-                                IsVisible="{TemplateBinding leotiaui:ControlAssist.Hint,
-                                                            Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+                                IsVisible="{TemplateBinding leotiaui:ControlAssist.Hint, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
                                 Text="{TemplateBinding leotiaui:ControlAssist.Hint}" />
                         </StackPanel>
                     </DataValidationErrors>
-                </StackPanel>
+                </Grid>
             </ControlTemplate>
         </Setter>
         <Style Selector="^[InputFocus=True]">

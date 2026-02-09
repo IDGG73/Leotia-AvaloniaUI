@@ -3,11 +3,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     x:ClassModifier="internal">
     <ControlTheme x:Key="{x:Type Label}" TargetType="Label">
-        <Setter Property="Padding" Value="3" />
+        <Setter Property="Padding" Value="{DynamicResource SmPadding}" />
         <Setter Property="Template">
             <ControlTemplate>
                 <ContentPresenter
                     Name="PART_ContentPresenter"
+                    FontSize="{DynamicResource DefaultFontSize}"
+                    FontFamily="{DynamicResource DefaultFont}"
                     Padding="{TemplateBinding Padding}"
                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -72,5 +74,79 @@
         <Style Selector="^.Error">
             <Setter Property="Foreground" Value="{DynamicResource DestructiveColor}" />
         </Style>
+
+        <Style Selector="^.Gray">
+            <Setter Property="Background" Value="{DynamicResource IconGrayGhost}" />
+            <Setter Property="Foreground" Value="{DynamicResource IconGray}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource IconGray}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="{StaticResource FullCornerRadius}" />
+            <Setter Property="Padding" Value="{StaticResource MdPadding}" />
+        </Style>
+        <Style Selector="^.Red">
+            <Setter Property="Background" Value="{DynamicResource IconRedGhost}" />
+            <Setter Property="Foreground" Value="{DynamicResource IconRed}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource IconRed}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="{StaticResource FullCornerRadius}" />
+            <Setter Property="Padding" Value="{StaticResource MdPadding}" />
+        </Style>
+        <Style Selector="^.Green">
+            <Setter Property="Background" Value="{DynamicResource IconGreenGhost}" />
+            <Setter Property="Foreground" Value="{DynamicResource IconGreen}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource IconGreen}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="{StaticResource FullCornerRadius}" />
+            <Setter Property="Padding" Value="{StaticResource MdPadding}" />
+        </Style>
+        <Style Selector="^.Mint">
+            <Setter Property="Background" Value="{DynamicResource IconMintGhost}" />
+            <Setter Property="Foreground" Value="{DynamicResource IconMint}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource IconMint}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="{StaticResource FullCornerRadius}" />
+            <Setter Property="Padding" Value="{StaticResource MdPadding}" />
+        </Style>
+        <Style Selector="^.Blue">
+            <Setter Property="Background" Value="{DynamicResource IconBlueGhost}" />
+            <Setter Property="Foreground" Value="{DynamicResource IconBlue}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource IconBlue}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="{StaticResource FullCornerRadius}" />
+            <Setter Property="Padding" Value="{StaticResource MdPadding}" />
+        </Style>
+        <Style Selector="^.Pink">
+            <Setter Property="Background" Value="{DynamicResource IconPinkGhost}" />
+            <Setter Property="Foreground" Value="{DynamicResource IconPink}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource IconPink}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="{StaticResource FullCornerRadius}" />
+            <Setter Property="Padding" Value="{StaticResource MdPadding}" />
+        </Style>
+        <Style Selector="^.Orange">
+            <Setter Property="Background" Value="{DynamicResource IconOrangeGhost}" />
+            <Setter Property="Foreground" Value="{DynamicResource IconOrange}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource IconOrange}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="{StaticResource FullCornerRadius}" />
+            <Setter Property="Padding" Value="{StaticResource MdPadding}" />
+        </Style>
+        <Style Selector="^.Yellow">
+            <Setter Property="Background" Value="{DynamicResource IconYellowGhost}" />
+            <Setter Property="Foreground" Value="{DynamicResource IconYellow}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource IconYellow}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="{StaticResource FullCornerRadius}" />
+            <Setter Property="Padding" Value="{StaticResource MdPadding}" />
+        </Style>
+        <Style Selector="^.Purple">
+            <Setter Property="Background" Value="{DynamicResource IconPurpleGhost}" />
+            <Setter Property="Foreground" Value="{DynamicResource IconPurple}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource IconPurple}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="{StaticResource FullCornerRadius}" />
+            <Setter Property="Padding" Value="{StaticResource MdPadding}" />
+        </Style>
+
     </ControlTheme>
 </ResourceDictionary>

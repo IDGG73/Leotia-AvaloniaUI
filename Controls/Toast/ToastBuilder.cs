@@ -14,7 +14,7 @@ public sealed class ToastBuilder
     ///     Returns a new instance of <see cref="ToastBuilder" />.
     /// </summary>
     /// <param name="manager">The toast manager</param>
-    internal ToastBuilder(ToastManager manager)
+    public ToastBuilder(ToastManager manager)
     {
         _manager = manager;
     }
@@ -23,6 +23,7 @@ public sealed class ToastBuilder
 
     internal Notification Notification { get; set; }
 
+    internal string? Title { get; set; }
     internal object? Content { get; set; }
 
     internal double Delay { get; set; } = 10;
@@ -48,6 +49,7 @@ public sealed class ToastBuilder
         _toast ??= new Toast(_manager);
 
         _toast.Notification = Notification;
+        _toast.Title = Title;
         _toast.Content = Content;
         _toast.Delay = Delay;
         _toast.ActionLabel = ActionLabel;

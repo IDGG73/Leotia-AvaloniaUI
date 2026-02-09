@@ -81,7 +81,7 @@
                 <ControlTemplate TargetType="ToggleButton">
                     <Border
                         x:Name="ButtonLayoutBorder"
-                        Padding="4"
+                        Padding="{StaticResource SmPadding}"
                         Background="Transparent">
                         <Panel>
                             <Path
@@ -116,31 +116,36 @@
     </ControlTheme>
 
     <ControlTheme x:Key="{x:Type TextBox}" TargetType="TextBox">
-        <Setter Property="FontSize" Value="14" />
-        <Setter Property="LineHeight" Value="20" />
-        <Setter Property="Background" Value="{DynamicResource SelectionColor}" />
+        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
+        <Setter Property="LineHeight" Value="{DynamicResource PresenterLineHeight}" />
+        <Setter Property="Background" Value="{DynamicResource FieldColor}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}" />
-        <Setter Property="Padding" Value="12,4" />
+        <Setter Property="Padding" Value="2,-2,2,0" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="CornerRadius" Value="{DynamicResource LgCornerRadius}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource FieldCornerRadius}" />
         <Setter Property="SelectionBrush" Value="{DynamicResource PrimaryColor}" />
         <Setter Property="SelectionForegroundBrush" Value="{DynamicResource PrimaryForegroundColor}" />
         <Setter Property="CaretBrush" Value="{DynamicResource ForegroundColor}" />
         <Setter Property="FocusAdorner" Value="{x:Null}" />
         <Setter Property="leotiaui:ControlAssist.ShowProgress" Value="False" />
-        <Setter Property="leotiaui:ControlAssist.MinHeight" Value="36" />
+        <Setter Property="leotiaui:ControlAssist.MinHeight" Value="{DynamicResource SingleLineHeight}" />
         <Setter Property="Template">
             <ControlTemplate>
-                <StackPanel Background="Transparent" Focusable="False">
+                <Grid Background="Transparent" Focusable="False">
+                    <Grid.ColumnDefinitions>
+					        <ColumnDefinition Width="{Binding #PART_Label.IsVisible, Converter={x:Static leotiaui:BooleanConverters.LabelColumnWidth}}"/>
+                            <ColumnDefinition Width="{Binding #PART_Label.IsVisible, Converter={x:Static leotiaui:BooleanConverters.FieldColumnWidth}}"/>
+                        </Grid.ColumnDefinitions>
                     <TextBlock
                         Name="PART_Label"
-                        Margin="0,0,0,6"
-                        Classes="Small"
+                        Grid.Column="0"
+                        Margin="0,0,5,0"
                         Cursor="Arrow"
+                        Foreground="{DynamicResource LabelColor}"
                         IsVisible="{TemplateBinding UseFloatingWatermark}"
                         Text="{TemplateBinding Watermark}" />
-                    <DataValidationErrors Focusable="False">
+                    <DataValidationErrors Focusable="False" Grid.Column="1">
                         <StackPanel>
                             <Border
                                 Name="Border"
@@ -150,11 +155,36 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="{TemplateBinding CornerRadius}">
-                                <Grid ColumnDefinitions="Auto * Auto">
+                                <DockPanel HorizontalAlignment="Stretch" LastChildFill="True">
                                     <ContentPresenter
-                                        Grid.Column="0"
+                                        DockPanel.Dock="Left"
                                         VerticalAlignment="Center"
                                         Content="{TemplateBinding InnerLeftContent}" />
+                                    <ContentPresenter
+                                        DockPanel.Dock="Right"
+                                        Grid.Column="2"
+                                        Margin="1,1,12,1"
+                                        VerticalAlignment="Center"
+                                        Content="{TemplateBinding InnerRightContent}"
+                                        IsVisible="{TemplateBinding leotiaui:ControlAssist.ShowProgress,
+                                                                    Converter={x:Static BoolConverters.Not}}" />
+                                    <ContentPresenter
+                                        Name="ClearButton"
+                                        DockPanel.Dock="Right"
+                                        Margin="1,1,12,1"
+                                        VerticalAlignment="Center"
+                                        IsVisible="{TemplateBinding leotiaui:ControlAssist.ShowProgress,
+                                                                    Converter={x:Static BoolConverters.Not}}" />
+                                    <ContentPresenter
+                                        Name="LoadingIndicator"
+                                        DockPanel.Dock="Right"
+                                        Width="20"
+                                        Height="20"
+                                        Margin="1,1,12,1"
+                                        VerticalAlignment="Center"
+                                        Content="{TemplateBinding leotiaui:ControlAssist.ShowProgress,
+                                                                  Converter={x:Static leotiaui:BooleanConverters.ToLoading}}"
+                                        IsVisible="{TemplateBinding leotiaui:ControlAssist.ShowProgress}" />
                                     <ScrollViewer
                                         Name="PART_ScrollViewer"
                                         Grid.Column="1"
@@ -213,32 +243,7 @@
                                             </Style>
                                         </ScrollViewer.Styles>
                                     </ScrollViewer>
-                                    <ContentPresenter
-                                        Name="InnerRightContent"
-                                        Grid.Column="2"
-                                        Margin="0,4,12,4"
-                                        VerticalAlignment="Center"
-                                        Content="{TemplateBinding InnerRightContent}"
-                                        IsVisible="{TemplateBinding leotiaui:ControlAssist.ShowProgress,
-                                                                    Converter={x:Static BoolConverters.Not}}" />
-                                    <ContentPresenter
-                                        Name="ClearButton"
-                                        Grid.Column="2"
-                                        Margin="0,4,12,4"
-                                        VerticalAlignment="Center"
-                                        IsVisible="{TemplateBinding leotiaui:ControlAssist.ShowProgress,
-                                                                    Converter={x:Static BoolConverters.Not}}" />
-                                    <ContentPresenter
-                                        Name="LoadingIndicator"
-                                        Grid.Column="2"
-                                        Width="20"
-                                        Height="20"
-                                        Margin="0,4,12,4"
-                                        VerticalAlignment="Center"
-                                        Content="{TemplateBinding leotiaui:ControlAssist.ShowProgress,
-                                                                  Converter={x:Static leotiaui:BooleanConverters.ToLoading}}"
-                                        IsVisible="{TemplateBinding leotiaui:ControlAssist.ShowProgress}" />
-                                </Grid>
+                                </DockPanel>
                             </Border>
                             <TextBlock
                                 Name="Hint"
@@ -250,7 +255,7 @@
                                 Text="{TemplateBinding leotiaui:ControlAssist.Hint}" />
                         </StackPanel>
                     </DataValidationErrors>
-                </StackPanel>
+                </Grid>
             </ControlTemplate>
         </Setter>
 
@@ -262,7 +267,7 @@
                     </Transitions>
                 </Setter.Value>
             </Setter>
-            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentColor}" />
         </Style>
         <Style Selector="^:focus /template/ Border#Border">
             <Setter Property="Transitions">
@@ -272,7 +277,7 @@
                     </Transitions>
                 </Setter.Value>
             </Setter>
-            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentColor}" />
         </Style>
         <Style Selector="^:error">
             <Style Selector="^/template/ Border#Border">

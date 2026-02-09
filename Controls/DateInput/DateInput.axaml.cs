@@ -138,8 +138,8 @@ public class DateInput : TemplatedControl
 
         var nextTextBox = textBox.Name switch
         {
-            "PART_MonthTextBox" => _dayTextBox,
-            "PART_DayTextBox" => _yearTextBox,
+            "PART_DayTextBox" => _monthTextBox,
+            "PART_MonthTextBox" => _yearTextBox,
             _ => null
         };
 

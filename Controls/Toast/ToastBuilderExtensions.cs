@@ -18,6 +18,18 @@ public static class ToastBuilderExtensions
         => new ToastBuilder(manager).CreateToast(title);
 
     /// <summary>
+    ///     Sets the title of the toast.
+    /// </summary>
+    /// <param name="builder">The current <see cref="ToastBuilder" /></param>
+    /// <param name="title">The content of the toast</param>
+    /// <returns></returns>
+    public static ToastBuilder WithTitle(this ToastBuilder builder, string title)
+    {
+        builder.Title = title;
+        return builder;
+    }
+
+    /// <summary>
     ///     Sets the content of the toast.
     /// </summary>
     /// <param name="builder">The current <see cref="ToastBuilder" /></param>

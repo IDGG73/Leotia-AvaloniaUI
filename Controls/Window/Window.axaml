@@ -97,10 +97,10 @@
                                         <LayoutTransformControl Name="LayoutTransform" RenderTransformOrigin="0%,0%">
                                             <Panel Margin="0,-1,0,0">
                                                 <Border Name="PART_TitleBarBackground" IsVisible="{TemplateBinding ShowTitlebarBackground}" />
-                                                <DockPanel LastChildFill="True">
+                                                <Grid>
                                                     <StackPanel
-                                                        DockPanel.Dock="Right"
                                                         Orientation="Horizontal"
+                                                        HorizontalAlignment="Right"
                                                         Spacing="8">
                                                         <StackPanel.Styles>
                                                             <Style Selector="PathIcon">
@@ -155,21 +155,32 @@
                                                     <StackPanel
                                                         Name="AppTitlePanel"
                                                         VerticalAlignment="Center"
+                                                        HorizontalAlignment="Left"
                                                         IsHitTestVisible="False"
                                                         Orientation="Horizontal"
-                                                        Spacing="10">
+                                                        Spacing="5">
                                                         <ContentPresenter
                                                             HorizontalAlignment="Left"
                                                             Content="{TemplateBinding LogoContent}"
-                                                            IsHitTestVisible="False" />
+                                                            IsHitTestVisible="False"
+                                                            Margin="5,0,0,0"/>
                                                         <TextBlock
                                                             VerticalAlignment="Center"
                                                             FontSize="{TemplateBinding TitleFontSize}"
                                                             FontWeight="{TemplateBinding TitleFontWeight}"
+                                                            Opacity="0.6"
                                                             IsHitTestVisible="False"
-                                                            Text="{TemplateBinding Title}" />
+                                                            Text="{TemplateBinding SecondaryTitle}" />
                                                     </StackPanel>
-                                                </DockPanel>
+                                                    <TextBlock
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center"
+                                                        FontSize="{TemplateBinding TitleFontSize}"
+                                                        FontWeight="{TemplateBinding TitleFontWeight}"
+                                                        Opacity="0.6"
+                                                        IsHitTestVisible="False"
+                                                        Text="{TemplateBinding Title}" />
+                                                </Grid>
                                             </Panel>
                                         </LayoutTransformControl>
                                         <Panel

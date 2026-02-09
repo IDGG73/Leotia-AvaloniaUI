@@ -12,6 +12,9 @@
                 <ResourceInclude x:Key="Light" Source="/Themes/Light.axaml" />
                 <ResourceInclude x:Key="Dark" Source="/Themes/Dark.axaml" />
             </ResourceDictionary.ThemeDictionaries>
+
+            <FontFamily x:Key="DefaultFont">avares://LeotiaUI/Fonts#Space Grotesk</FontFamily>
+
         </ResourceDictionary>
     </Styles.Resources>
     <StyleInclude Source="avares://LeotiaUI/Controls/Styles.axaml" />

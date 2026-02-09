@@ -12,7 +12,8 @@
         <Setter Property="Palette">
             <FluentColorPalette />
         </Setter>
-        <Setter Property="CornerRadius" Value="{DynamicResource LgCornerRadius}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource SmCornerRadius}" />
+        <Setter Property="Background" Value="{DynamicResource FieldColor}" />
         <Setter Property="HexInputAlphaPosition" Value="Trailing" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
@@ -21,31 +22,39 @@
             <Template>
                 <StackPanel Orientation="Horizontal" Spacing="8">
                     <Border
-                        Width="24"
-                        Height="24"
+                        Width="18"
+                        Height="12"
                         Background="{Binding $parent[ColorPicker].HsvColor, Converter={x:Static leotiaui:BasicConverters.ToBrushConverter}}"
-                        CornerRadius="{DynamicResource SmCornerRadius}" />
+                        BorderThickness="1"
+                        BorderBrush="{DynamicResource BorderColor}"
+                        CornerRadius="{TemplateBinding CornerRadius}" />
                     <TextBlock
                         VerticalAlignment="Center"
-                        Classes="Small"
                         Text="{Binding $parent[ColorPicker].HsvColor, Converter={x:Static leotiaui:BasicConverters.ToBrushConverter}}" />
                 </StackPanel>
             </Template>
         </Setter>
         <Setter Property="Template">
             <ControlTemplate>
-                <StackPanel Background="Transparent" Spacing="4">
+                <Grid Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding #Label.IsVisible, Converter={x:Static leotiaui:BooleanConverters.LabelColumnWidth}}"/>
+                        <ColumnDefinition Width="{Binding #Label.IsVisible, Converter={x:Static leotiaui:BooleanConverters.FieldColumnWidth}}"/>
+                    </Grid.ColumnDefinitions>
                     <TextBlock
                         Name="Label"
-                        Margin="0,0,0,6"
-                        Classes="Small"
+                        Grid.Column="0"
+                        Margin="0,0,5,0"
+                        Foreground="{DynamicResource LabelColor}"
                         IsVisible="{TemplateBinding leotiaui:ControlAssist.Label,
                                                     Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
                         Text="{TemplateBinding leotiaui:ControlAssist.Label}" />
-                    <Panel>
+                    <Panel Grid.Column="1">
                         <ToggleButton
                             Name="DropDownButton"
+                            Background="{TemplateBinding Background}"
                             HorizontalContentAlignment="Stretch"
+                            Height="{DynamicResource SingleLineHeight}"
                             Classes="NoPressedAnimation Outline">
                             <Grid ColumnDefinitions="* Auto">
                                 <ContentControl Content="{TemplateBinding Content}" />
@@ -61,6 +70,8 @@
                                     IsVisible="{TemplateBinding leotiaui:ControlAssist.ShowIcon}" />
                             </Grid>
                         </ToggleButton>
+
+                        <!-- ACTUAL COLOR PICKER POPUP MODAL -->
                         <Popup
                             Name="Popup"
                             Width="376"
@@ -251,7 +262,7 @@
                                                         <DockPanel LastChildFill="True">
                                                             <NumericUpDown
                                                                 Name="Component1NumericUpDown"
-                                                                Width="112"
+                                                                Width="130"
                                                                 Margin="0,0,12,0"
                                                                 FormatString="N0"
                                                                 IsVisible="{TemplateBinding IsComponentTextInputVisible}"
@@ -284,7 +295,7 @@
                                                         <DockPanel LastChildFill="True">
                                                             <NumericUpDown
                                                                 Name="Component2NumericUpDown"
-                                                                Width="112"
+                                                                Width="130"
                                                                 Margin="0,0,12,0"
                                                                 FormatString="N0"
                                                                 IsVisible="{TemplateBinding IsComponentTextInputVisible}"
@@ -317,7 +328,7 @@
                                                         <DockPanel LastChildFill="True">
                                                             <NumericUpDown
                                                                 Name="Component3NumericUpDown"
-                                                                Width="112"
+                                                                Width="130"
                                                                 Margin="0,0,12,0"
                                                                 FormatString="N0"
                                                                 IsVisible="{TemplateBinding IsComponentTextInputVisible}"
@@ -356,7 +367,7 @@
                                                             </DockPanel.IsVisible>
                                                             <NumericUpDown
                                                                 Name="AlphaComponentNumericUpDown"
-                                                                Width="112"
+                                                                Width="130"
                                                                 Margin="0,0,12,0"
                                                                 FormatString="N0"
                                                                 IsVisible="{TemplateBinding IsComponentTextInputVisible}"
@@ -404,11 +415,11 @@
                                                     Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
                         Text="{TemplateBinding leotiaui:ControlAssist.Hint}"
                         TextWrapping="Wrap" />
-                </StackPanel>
+                </Grid>
             </ControlTemplate>
         </Setter>
         <Style Selector="^:focus">
-            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentColor}" />
         </Style>
         <Style Selector="^:pointerover">
             <Setter Property="Transitions">
@@ -455,7 +466,7 @@
             </Style.Animations>
         </Style>
         <Style Selector="^ /template/ ToggleButton#DropDownButton[IsChecked=True]">
-            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentColor}" />
         </Style>
     </ControlTheme>
 </ResourceDictionary>

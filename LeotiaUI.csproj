@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
         <Version>0.0.1</Version>
         <FileVersion>0.0.1</FileVersion>
@@ -23,15 +23,40 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.3.8" />
-        <PackageReference Include="Avalonia.Controls.ColorPicker" Version="11.3.8" />
-        <PackageReference Include="Avalonia.Skia" Version="11.3.8" />
+      <AvaloniaXaml Remove="Controls\Flyout\Flyout.axaml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Fonts\Barlow.ttf" />
+      <None Remove="Fonts\FunnelDisplay.ttf" />
+      <None Remove="Fonts\Inter.ttf" />
+      <None Remove="Fonts\Lexend.ttf" />
+      <None Remove="Fonts\Nunito.ttf" />
+      <None Remove="Fonts\Quicksand.ttf" />
+      <None Remove="Fonts\SpaceGrotesk.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AvaloniaResource Include="Fonts\Barlow.ttf" />
+      <AvaloniaResource Include="Fonts\FunnelDisplay.ttf" />
+      <AvaloniaResource Include="Fonts\Inter.ttf" />
+      <AvaloniaResource Include="Fonts\Lexend.ttf" />
+      <AvaloniaResource Include="Fonts\Nunito.ttf" />
+      <AvaloniaResource Include="Fonts\Quicksand.ttf" />
+      <AvaloniaResource Include="Fonts\SpaceGrotesk.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.3.6" />
+        <PackageReference Include="Avalonia.Controls.ColorPicker" Version="11.3.6" />
+        <PackageReference Include="Avalonia.Skia" Version="11.3.6" />
         <PackageReference Include="MinVer" Version="6.0.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Avalonia.Themes.Simple" Version="11.3.8" />
-        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.8" />
+        <PackageReference Include="Avalonia.Themes.Simple" Version="11.3.6" />
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.6" />
+        <PackageReference Include="System.Reactive" Version="6.1.0" />
     </ItemGroup>
 
     <PropertyGroup>
@@ -41,6 +66,10 @@
     <ItemGroup>
         <None Include="..\..\README.md" Pack="true" PackagePath="\" />
         <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Controls\Flyout\" />
     </ItemGroup>
 
 </Project>

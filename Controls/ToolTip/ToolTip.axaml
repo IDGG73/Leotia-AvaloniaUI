@@ -28,12 +28,14 @@
     <sys:Double x:Key="ToolTipContentMaxWidth">320</sys:Double>
 
     <ControlTheme x:Key="{x:Type ToolTip}" TargetType="ToolTip">
-        <Setter Property="Foreground" Value="{DynamicResource PrimaryForegroundColor}" />
-        <Setter Property="Background" Value="{DynamicResource PrimaryColor}" />
-        <Setter Property="FontSize" Value="12" />
-        <Setter Property="Padding" Value="12,6" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+        <Setter Property="Background" Value="{DynamicResource ModalBackgroundColor}" />
+        <Setter Property="FontSize" Value="{StaticResource DefaultFontSize}" />
+        <Setter Property="Padding" Value="6,2" />
         <Setter Property="MaxWidth" Value="{DynamicResource ToolTipContentMaxWidth}" />
         <Setter Property="CornerRadius" Value="{DynamicResource MdCornerRadius}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}"/>
+        <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Opacity" Value="0" />
         <Setter Property="Transitions">
             <Transitions>

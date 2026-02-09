@@ -12,27 +12,31 @@
         </Border>
     </Design.PreviewWith>
     <ControlTheme x:Key="{x:Type CheckBox}" TargetType="CheckBox">
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-        <Setter Property="Background" Value="{DynamicResource SelectionColor}" />
+        <Setter Property="Foreground" Value="{DynamicResource LabelColor}" />
+        <Setter Property="Background" Value="{DynamicResource FieldColor}" />
         <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="CornerRadius" Value="{DynamicResource SmCornerRadius}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource FieldCornerRadius}" />
         <Setter Property="Padding" Value="4,0,0,0" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="TextBlock.FontSize" Value="14" />
-        <Setter Property="TextBlock.FontWeight" Value="Medium" />
+        <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}"/>
+        <!-- <Setter Property="TextBlock.FontSize" Value="{DynamicResource DefaultFontSize}" /> -->
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="Template">
             <ControlTemplate>
-                <StackPanel
-                    Background="Transparent"
-                    Orientation="Horizontal"
-                    Spacing="4">
+                <Grid Background="Transparent">
+                    <Grid.ColumnDefinitions>
+					    <ColumnDefinition Width="{Binding #PART_ContentPresenter.IsVisible, Converter={x:Static leotiaui:BooleanConverters.LabelColumnWidth}}"/>
+                        <ColumnDefinition Width="{Binding #PART_ContentPresenter.IsVisible, Converter={x:Static leotiaui:BooleanConverters.FieldColumnWidth}}"/>
+                    </Grid.ColumnDefinitions>
                     <Border
                         Name="Container"
+                        Grid.Column="1"
                         Width="18"
                         Height="18"
                         VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
@@ -61,16 +65,17 @@
                     </Border>
                     <ContentPresenter
                         Name="PART_ContentPresenter"
-                        Margin="{TemplateBinding Padding}"
-                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                        Grid.Column="0"
+                        VerticalAlignment="Center"
+                        FontFamily="{TemplateBinding FontFamily}"
+                        FontSize="{TemplateBinding FontSize}"
                         Content="{TemplateBinding Content}"
                         ContentTemplate="{TemplateBinding ContentTemplate}"
                         IsVisible="{TemplateBinding Content,
                                                     Converter={x:Static ObjectConverters.IsNotNull}}"
                         RecognizesAccessKey="True"
                         TextElement.Foreground="{TemplateBinding Foreground}" />
-                </StackPanel>
+                </Grid>
             </ControlTemplate>
         </Setter>
         <Style Selector="^:pointerover /template/ Border#Container">
@@ -94,6 +99,7 @@
                 <Setter Property="IsVisible" Value="True" />
             </Style>
             <Style Selector="^ /template/ Border#Container">
+                <!-- <Setter Property="Background" Value="{DynamicResource AccentColor}" /> -->
                 <Setter Property="Background" Value="{DynamicResource PrimaryColor}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
             </Style>

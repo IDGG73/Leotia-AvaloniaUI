@@ -2,17 +2,45 @@
 
     <!--  basic colors  -->
     <Color x:Key="ForegroundColor">#E5E5E5</Color>
+    <Color x:Key="GhostForegroundColor">#9C9C9C</Color>
     <Color x:Key="ForegroundLeadColor">#A1A1AA</Color>
     <Color x:Key="BackgroundColor">Transparent</Color>
-    <Color x:Key="MutedColor">#A0A0A9</Color>
+    <Color x:Key="MutedColor">#A0A0A0</Color>
+
+    <Color x:Key="DarkBorderColor">#1A1A1A</Color>
+
     <Color x:Key="BorderColor">#353535</Color>
     <Color x:Key="BorderColor60">#262626</Color>
     <Color x:Key="BorderColor30">#4C353535</Color>
     <Color x:Key="OutlineColor">#3E3E3E</Color>
-    <Color x:Key="GhostColor">#323232</Color>
+    <Color x:Key="GhostColor">#404040</Color>
     <Color x:Key="GhostHoverColor">#7F323232</Color>
     <Color x:Key="GhostHoverColor50">#33323232</Color>
-    <Color x:Key="SelectionColor">#0CE5E5E5</Color>
+    <Color x:Key="SelectionColor">#4F4F4F</Color>
+    <Color x:Key="FieldColor">#181818</Color>
+    <Color x:Key="LabelColor">#A0A0A0</Color>
+    <Color x:Key="ButtonColor">#383838</Color>
+
+    <!-- icon colors -->
+    <Color x:Key="IconGray">#B9B9B9</Color>
+    <Color x:Key="IconRed">#EC534E</Color>
+    <Color x:Key="IconGreen">#0BB07F</Color>
+    <Color x:Key="IconMint">#59FFC8</Color>
+    <Color x:Key="IconBlue">#3EA3FE</Color>
+    <Color x:Key="IconPink">#E77FA4</Color>
+    <Color x:Key="IconOrange">#FF9954</Color>
+    <Color x:Key="IconYellow">#FFE7A7</Color>
+    <Color x:Key="IconPurple">#997ED2</Color>
+
+    <Color x:Key="IconGrayGhost">#32B9B9B9</Color>
+    <Color x:Key="IconRedGhost">#32EC534E</Color>
+    <Color x:Key="IconGreenGhost">#320BB07F</Color>
+    <Color x:Key="IconMintGhost">#3259FFC8</Color>
+    <Color x:Key="IconBlueGhost">#323EA3FE</Color>
+    <Color x:Key="IconPinkGhost">#32E77FA4</Color>
+    <Color x:Key="IconOrangeGhost">#32FF9954</Color>
+    <Color x:Key="IconYellowGhost">#32FFE7A7</Color>
+    <Color x:Key="IconPurpleGhost">#32997ED2</Color>
 
     <!--  theme colors  -->
     <Color x:Key="PrimaryColor">#E5E5E5</Color>
@@ -59,15 +87,18 @@
 
 	<Color x:Key="SwitchForegroundColor">#FAFAFA</Color>
 
-	<Color x:Key="DialogOverlayColor">#151515</Color>
-	<Color x:Key="TitleBarBackgroundColor">#151515</Color>
-	<Color x:Key="WindowBackgroundColor">#151515</Color>
+	<Color x:Key="TitleBarBackgroundColor">#141414</Color>
+	<Color x:Key="WindowBackgroundColor">#141414</Color>
 
 	<Color x:Key="DialogBackgroundColor">#151515</Color>
 	<Color x:Key="SidebarBackgroundColor">#151515</Color>
 	<Color x:Key="SwitchBackgroundColor">#151515</Color>
-	<Color x:Key="TabItemsBackgroundColor">#151515</Color>
+
+	<Color x:Key="TabItemsBackgroundColor">#1c1c1c</Color>
+    <Color x:Key="TabItemSelectedColor">#242424</Color>
 
 	<Color x:Key="CardBackgroundColor">#242424</Color>
-	<Color x:Key="TabItemSelectedColor">#242424</Color>
+    <Color x:Key="DialogOverlayColor">#303030</Color>
+
+    <Color x:Key="ModalBackgroundColor">#303030</Color>
 </ResourceDictionary>

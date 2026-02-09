@@ -56,7 +56,10 @@
 
     <ControlTheme x:Key="TabControlTheme" TargetType="TabControl">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-        <Setter Property="Background" Value="{DynamicResource BackgroundColor}" />
+        <Setter Property="Background" Value="{DynamicResource CardBackgroundColor}" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="{DynamicResource SmPadding}" />
         <Setter Property="ItemsPanel">
             <Setter.Value>
                 <ItemsPanelTemplate>
@@ -70,17 +73,21 @@
                     HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                     VerticalAlignment="{TemplateBinding VerticalAlignment}"
                     Background="{TemplateBinding Background}"
+                    Margin="{TemplateBinding Margin}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
+                    Padding="{TemplateBinding Padding}"
                     CornerRadius="{TemplateBinding CornerRadius}">
                     <StackPanel Spacing="8">
                         <LayoutTransformControl Name="LayoutTransform" DockPanel.Dock="{TemplateBinding TabStripPlacement}">
                             <Border
-                                Padding="2,4,2,0"
-                                HorizontalAlignment="Left"
+                                HorizontalAlignment="Center"
                                 Background="{DynamicResource TabItemsBackgroundColor}"
-                                CornerRadius="{DynamicResource LgCornerRadius}">
-                                <ItemsPresenter Name="PART_ItemsPresenter" ItemsPanel="{TemplateBinding ItemsPanel}" />
+                                BorderBrush="{DynamicResource OutlineColor}"
+                                BorderThickness="1"
+                                Padding="{DynamicResource MdPadding}"
+                                CornerRadius="{DynamicResource MdCornerRadius}">
+							    <ItemsPresenter Name="PART_ItemsPresenter" ItemsPanel="{TemplateBinding ItemsPanel}" />	
                             </Border>
                         </LayoutTransformControl>
                         <ContentPresenter
@@ -89,7 +96,8 @@
                             HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                             VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                             Content="{TemplateBinding SelectedContent}"
-                            ContentTemplate="{TemplateBinding SelectedContentTemplate}" />
+                            ContentTemplate="{TemplateBinding SelectedContentTemplate}"
+                            IsVisible="{TemplateBinding SelectedContent, Converter={x:Static ObjectConverters.IsNotNull}}"/>
                     </StackPanel>
                 </Border>
             </ControlTemplate>

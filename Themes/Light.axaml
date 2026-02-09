@@ -12,7 +12,7 @@
     <Color x:Key="GhostColor">#EAEAEA</Color>
     <Color x:Key="GhostHoverColor">#7FEAEAEA</Color>
     <Color x:Key="GhostHoverColor50">#33EAEAEA</Color>
-    <Color x:Key="SelectionColor">#0CE5E5E5</Color>
+    <Color x:Key="SelectionColor">White</Color>
 
     <!--  theme colors  -->
     <Color x:Key="PrimaryColor">#171717</Color>
@@ -71,4 +71,6 @@
 
     <Color x:Key="TabItemSelectedColor">#F5F5F5</Color>
     <Color x:Key="TabItemsBackgroundColor">#EAEAEA</Color>
+
+    <Color x:Key="ModalBackgroundColor">White</Color>
 </ResourceDictionary>

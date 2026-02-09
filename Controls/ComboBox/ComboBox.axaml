@@ -35,16 +35,16 @@
     </Design.PreviewWith>
     <ControlTheme x:Key="ComboBoxControlTheme" TargetType="ComboBox">
         <Setter Property="BorderThickness" Value="1,1,1,1" />
-        <Setter Property="CornerRadius" Value="{DynamicResource LgCornerRadius}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource FieldCornerRadius}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}" />
         <Setter Property="PlaceholderForeground" Value="{DynamicResource MutedColor}" />
         <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
-        <Setter Property="Background" Value="{DynamicResource SelectionColor}" />
+        <Setter Property="Background" Value="{DynamicResource FieldColor}" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="FontWeight" Value="Medium" />
-        <Setter Property="leotiaui:ControlAssist.MinHeight" Value="36" />
+        <Setter Property="leotiaui:ControlAssist.MinHeight" Value="{StaticResource SingleLineHeight}" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
         <Setter Property="ItemsPanel">
             <ItemsPanelTemplate>
@@ -54,15 +54,20 @@
         <Setter Property="Template">
             <ControlTemplate>
                 <DataValidationErrors>
-                    <StackPanel Background="Transparent" Spacing="4">
+                    <Grid Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{Binding #Label.IsVisible, Converter={x:Static leotiaui:BooleanConverters.LabelColumnWidth}}"/>
+                            <ColumnDefinition Width="{Binding #Label.IsVisible, Converter={x:Static leotiaui:BooleanConverters.FieldColumnWidth}}"/>
+                        </Grid.ColumnDefinitions>
                         <TextBlock
                             Name="Label"
-                            Margin="0,0,0,6"
-                            Classes="Small"
+                            Grid.Column="0"
+                            Margin="0,0,5,0"
+                            Foreground="{DynamicResource LabelColor}"
                             IsVisible="{TemplateBinding leotiaui:ControlAssist.Label,
                                                         Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
                             Text="{TemplateBinding leotiaui:ControlAssist.Label}" />
-                        <Panel>
+                        <Panel  Grid.Column="1">
                             <Border
                                 Name="Background"
                                 Background="{DynamicResource GhostColor}"
@@ -137,11 +142,11 @@
                                             <Border
                                                 MinWidth="{CompiledBinding #Border.Bounds.Width}"
                                                 Margin="2,0,2,4"
-                                                Background="{DynamicResource CardBackgroundColor}"
+                                                Background="{DynamicResource ModalBackgroundColor}"
                                                 BorderBrush="{DynamicResource BorderColor}"
                                                 BorderThickness="1"
                                                 BoxShadow="{DynamicResource Shadow}"
-                                                CornerRadius="{TemplateBinding CornerRadius}">
+                                                CornerRadius="{StaticResource MdCornerRadius}">
                                                 <ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
                                                     <ItemsPresenter
                                                         Name="PART_ItemsPresenter"
@@ -156,13 +161,7 @@
                                 </Grid>
                             </Border>
                         </Panel>
-                        <TextBlock
-                            Name="PART_Hint"
-                            Classes="Caption Muted"
-                            IsVisible="{TemplateBinding leotiaui:ControlAssist.Hint,
-                                                        Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
-                            Text="{TemplateBinding leotiaui:ControlAssist.Hint}" />
-                    </StackPanel>
+                    </Grid>
                 </DataValidationErrors>
             </ControlTemplate>
         </Setter>
@@ -189,7 +188,7 @@
         </Style>
         <Style Selector="^:focus">
             <Style Selector="^ /template/ Border#Border">
-                <Setter Property="BorderBrush" Value="{DynamicResource PrimaryColor}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource AccentColor}" />
             </Style>
         </Style>
         <Style Selector="^:pointerover /template/ Border#Border">
@@ -202,11 +201,11 @@
                 </Setter.Value>
             </Setter>
             <Setter Property="BorderBrush" Value="{DynamicResource OutlineColor}" />
-            <Setter Property="Background" Value="Transparent" />
+            <!-- <Setter Property="Background" Value="Transparent" /> -->
             <Setter Property="Cursor" Value="Hand" />
         </Style>
         <Style Selector="^:pointerover /template/ Border#Background">
-            <Setter Property="Opacity" Value="1" />
+            <Setter Property="Opacity" Value="0" />
         </Style>
         <Style Selector="^:disabled">
             <Setter Property="Opacity" Value="0.50" />
